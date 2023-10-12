@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C49A5C12AD0FA1D00F5566E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C02AD0FA1D00F5566E /* Colors.swift */; };
+		6C49A5C32AD0FA2F00F5566E /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C22AD0FA2F00F5566E /* PlanetView.swift */; };
+		6C49A5C52AD0FA8D00F5566E /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C42AD0FA8D00F5566E /* test.swift */; };
 		6C7C7C792AB2909100EEC316 /* NumturaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C782AB2909100EEC316 /* NumturaApp.swift */; };
 		6C7C7C7B2AB2909100EEC316 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C7A2AB2909100EEC316 /* ContentView.swift */; };
 		6C7C7C7D2AB2909200EEC316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7C7C7C2AB2909200EEC316 /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C49A5C02AD0FA1D00F5566E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		6C49A5C22AD0FA2F00F5566E /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
+		6C49A5C42AD0FA8D00F5566E /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		6C7C7C752AB2909100EEC316 /* Numtura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numtura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7C7C782AB2909100EEC316 /* NumturaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumturaApp.swift; sourceTree = "<group>"; };
 		6C7C7C7A2AB2909100EEC316 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +102,9 @@
 			children = (
 				6C7C7C782AB2909100EEC316 /* NumturaApp.swift */,
 				6C7C7C7A2AB2909100EEC316 /* ContentView.swift */,
+				6C49A5C02AD0FA1D00F5566E /* Colors.swift */,
+				6C49A5C42AD0FA8D00F5566E /* test.swift */,
+				6C49A5C22AD0FA2F00F5566E /* PlanetView.swift */,
 				6C7C7C7C2AB2909200EEC316 /* Assets.xcassets */,
 				6C7C7C7E2AB2909200EEC316 /* Preview Content */,
 			);
@@ -258,6 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C7C7C7B2AB2909100EEC316 /* ContentView.swift in Sources */,
+				6C49A5C12AD0FA1D00F5566E /* Colors.swift in Sources */,
+				6C49A5C32AD0FA2F00F5566E /* PlanetView.swift in Sources */,
+				6C49A5C52AD0FA8D00F5566E /* test.swift in Sources */,
 				6C7C7C792AB2909100EEC316 /* NumturaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

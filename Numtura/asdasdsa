@@ -1,0 +1,1236 @@
+diff --git a/Font/Montserrat.ttf b/Font/Montserrat.ttf
+new file mode 100644
+index 0000000..797c4a5
+Binary files /dev/null and b/Font/Montserrat.ttf differ
+diff --git a/Numtura.xcodeproj/project.pbxproj b/Numtura.xcodeproj/project.pbxproj
+index 5ee40d6..222ec9c 100644
+--- a/Numtura.xcodeproj/project.pbxproj
++++ b/Numtura.xcodeproj/project.pbxproj
+@@ -7,6 +7,13 @@
+ 	objects = {
+ 
+ /* Begin PBXBuildFile section */
++		6C31CF532AB4B14C00B9CC13 /* Planet1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C31CF522AB4B14C00B9CC13 /* Planet1View.swift */; };
++		6C49A5B62AD0F2A800F5566E /* Planet2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5B52AD0F2A800F5566E /* Planet2View.swift */; };
++		6C49A5B92AD0F30800F5566E /* Planet3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5B82AD0F30800F5566E /* Planet3View.swift */; };
++		6C512D802ABDF9C10072F965 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C512D7F2ABDF9C10072F965 /* Montserrat.ttf */; };
++		6C512D812ABDF9C10072F965 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C512D7F2ABDF9C10072F965 /* Montserrat.ttf */; };
++		6C512D822ABDF9C10072F965 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C512D7F2ABDF9C10072F965 /* Montserrat.ttf */; };
++		6C6AA62D2AB90F76004D968C /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6AA62C2AB90F76004D968C /* Test.swift */; };
+ 		6C7C7C792AB2909100EEC316 /* NumturaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C782AB2909100EEC316 /* NumturaApp.swift */; };
+ 		6C7C7C7B2AB2909100EEC316 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C7A2AB2909100EEC316 /* ContentView.swift */; };
+ 		6C7C7C7D2AB2909200EEC316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7C7C7C2AB2909200EEC316 /* Assets.xcassets */; };
+@@ -14,6 +21,8 @@
+ 		6C7C7C8A2AB2909200EEC316 /* NumturaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C892AB2909200EEC316 /* NumturaTests.swift */; };
+ 		6C7C7C942AB2909200EEC316 /* NumturaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C932AB2909200EEC316 /* NumturaUITests.swift */; };
+ 		6C7C7C962AB2909200EEC316 /* NumturaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C952AB2909200EEC316 /* NumturaUITestsLaunchTests.swift */; };
++		6C7C7CA32AB2911900EEC316 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7CA22AB2911900EEC316 /* Colors.swift */; };
++		6C7C7CA52AB2A2AF00EEC316 /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7CA42AB2A2AF00EEC316 /* PlanetView.swift */; };
+ /* End PBXBuildFile section */
+ 
+ /* Begin PBXContainerItemProxy section */
+@@ -34,6 +43,11 @@
+ /* End PBXContainerItemProxy section */
+ 
+ /* Begin PBXFileReference section */
++		6C31CF522AB4B14C00B9CC13 /* Planet1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet1View.swift; sourceTree = "<group>"; };
++		6C49A5B52AD0F2A800F5566E /* Planet2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet2View.swift; sourceTree = "<group>"; };
++		6C49A5B82AD0F30800F5566E /* Planet3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet3View.swift; sourceTree = "<group>"; };
++		6C512D7F2ABDF9C10072F965 /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
++		6C6AA62C2AB90F76004D968C /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+ 		6C7C7C752AB2909100EEC316 /* Numtura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numtura.app; sourceTree = BUILT_PRODUCTS_DIR; };
+ 		6C7C7C782AB2909100EEC316 /* NumturaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumturaApp.swift; sourceTree = "<group>"; };
+ 		6C7C7C7A2AB2909100EEC316 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+@@ -44,6 +58,8 @@
+ 		6C7C7C8F2AB2909200EEC316 /* NumturaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumturaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+ 		6C7C7C932AB2909200EEC316 /* NumturaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumturaUITests.swift; sourceTree = "<group>"; };
+ 		6C7C7C952AB2909200EEC316 /* NumturaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumturaUITestsLaunchTests.swift; sourceTree = "<group>"; };
++		6C7C7CA22AB2911900EEC316 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
++		6C7C7CA42AB2A2AF00EEC316 /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
+ /* End PBXFileReference section */
+ 
+ /* Begin PBXFrameworksBuildPhase section */
+@@ -71,9 +87,29 @@
+ /* End PBXFrameworksBuildPhase section */
+ 
+ /* Begin PBXGroup section */
++		6C49A5B72AD0F2BE00F5566E /* Adventures */ = {
++			isa = PBXGroup;
++			children = (
++			);
++			path = Adventures;
++			sourceTree = "<group>";
++		};
++		6C512D7E2ABDF9430072F965 /* Font */ = {
++			isa = PBXGroup;
++			children = (
++				6C512D7F2ABDF9C10072F965 /* Montserrat.ttf */,
++			);
++			path = Font;
++			sourceTree = "<group>";
++		};
+ 		6C7C7C6C2AB2909100EEC316 = {
+ 			isa = PBXGroup;
+ 			children = (
++				6C49A5B72AD0F2BE00F5566E /* Adventures */,
++				6C512D7E2ABDF9430072F965 /* Font */,
++				6C31CF522AB4B14C00B9CC13 /* Planet1View.swift */,
++				6C49A5B82AD0F30800F5566E /* Planet3View.swift */,
++				6C49A5B52AD0F2A800F5566E /* Planet2View.swift */,
+ 				6C7C7C772AB2909100EEC316 /* Numtura */,
+ 				6C7C7C882AB2909200EEC316 /* NumturaTests */,
+ 				6C7C7C922AB2909200EEC316 /* NumturaUITests */,
+@@ -95,7 +131,10 @@
+ 			isa = PBXGroup;
+ 			children = (
+ 				6C7C7C782AB2909100EEC316 /* NumturaApp.swift */,
++				6C6AA62C2AB90F76004D968C /* Test.swift */,
+ 				6C7C7C7A2AB2909100EEC316 /* ContentView.swift */,
++				6C7C7CA42AB2A2AF00EEC316 /* PlanetView.swift */,
++				6C7C7CA22AB2911900EEC316 /* Colors.swift */,
+ 				6C7C7C7C2AB2909200EEC316 /* Assets.xcassets */,
+ 				6C7C7C7E2AB2909200EEC316 /* Preview Content */,
+ 			);
+@@ -232,6 +271,7 @@
+ 			buildActionMask = 2147483647;
+ 			files = (
+ 				6C7C7C802AB2909200EEC316 /* Preview Assets.xcassets in Resources */,
++				6C512D802ABDF9C10072F965 /* Montserrat.ttf in Resources */,
+ 				6C7C7C7D2AB2909200EEC316 /* Assets.xcassets in Resources */,
+ 			);
+ 			runOnlyForDeploymentPostprocessing = 0;
+@@ -240,6 +280,7 @@
+ 			isa = PBXResourcesBuildPhase;
+ 			buildActionMask = 2147483647;
+ 			files = (
++				6C512D812ABDF9C10072F965 /* Montserrat.ttf in Resources */,
+ 			);
+ 			runOnlyForDeploymentPostprocessing = 0;
+ 		};
+@@ -247,6 +288,7 @@
+ 			isa = PBXResourcesBuildPhase;
+ 			buildActionMask = 2147483647;
+ 			files = (
++				6C512D822ABDF9C10072F965 /* Montserrat.ttf in Resources */,
+ 			);
+ 			runOnlyForDeploymentPostprocessing = 0;
+ 		};
+@@ -258,6 +300,12 @@
+ 			buildActionMask = 2147483647;
+ 			files = (
+ 				6C7C7C7B2AB2909100EEC316 /* ContentView.swift in Sources */,
++				6C31CF532AB4B14C00B9CC13 /* Planet1View.swift in Sources */,
++				6C7C7CA32AB2911900EEC316 /* Colors.swift in Sources */,
++				6C6AA62D2AB90F76004D968C /* Test.swift in Sources */,
++				6C49A5B62AD0F2A800F5566E /* Planet2View.swift in Sources */,
++				6C7C7CA52AB2A2AF00EEC316 /* PlanetView.swift in Sources */,
++				6C49A5B92AD0F30800F5566E /* Planet3View.swift in Sources */,
+ 				6C7C7C792AB2909100EEC316 /* NumturaApp.swift in Sources */,
+ 			);
+ 			runOnlyForDeploymentPostprocessing = 0;
+@@ -420,6 +468,7 @@
+ 				DEVELOPMENT_TEAM = ZKS2NRWRZN;
+ 				ENABLE_PREVIEWS = YES;
+ 				GENERATE_INFOPLIST_FILE = YES;
++				INFOPLIST_FILE = Numtura/Info.plist;
+ 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+ 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+ 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+@@ -449,6 +498,7 @@
+ 				DEVELOPMENT_TEAM = ZKS2NRWRZN;
+ 				ENABLE_PREVIEWS = YES;
+ 				GENERATE_INFOPLIST_FILE = YES;
++				INFOPLIST_FILE = Numtura/Info.plist;
+ 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+ 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+ 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+diff --git a/Numtura/Assets.xcassets/Moon.imageset/Contents.json b/Numtura/Assets.xcassets/Moon.imageset/Contents.json
+new file mode 100644
+index 0000000..8fe51ff
+--- /dev/null
++++ b/Numtura/Assets.xcassets/Moon.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "Moon.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/Moon.imageset/Moon.png b/Numtura/Assets.xcassets/Moon.imageset/Moon.png
+new file mode 100644
+index 0000000..d3ebb3a
+Binary files /dev/null and b/Numtura/Assets.xcassets/Moon.imageset/Moon.png differ
+diff --git a/Numtura/Assets.xcassets/Moon2.imageset/Contents.json b/Numtura/Assets.xcassets/Moon2.imageset/Contents.json
+new file mode 100644
+index 0000000..80f201d
+--- /dev/null
++++ b/Numtura/Assets.xcassets/Moon2.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "Moon2.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/Moon2.imageset/Moon2.png b/Numtura/Assets.xcassets/Moon2.imageset/Moon2.png
+new file mode 100644
+index 0000000..519cec8
+Binary files /dev/null and b/Numtura/Assets.xcassets/Moon2.imageset/Moon2.png differ
+diff --git a/Numtura/Assets.xcassets/alien.imageset/Contents.json b/Numtura/Assets.xcassets/alien.imageset/Contents.json
+new file mode 100644
+index 0000000..36ebe27
+--- /dev/null
++++ b/Numtura/Assets.xcassets/alien.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "alien.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/alien.imageset/alien.png b/Numtura/Assets.xcassets/alien.imageset/alien.png
+new file mode 100644
+index 0000000..5bbca4f
+Binary files /dev/null and b/Numtura/Assets.xcassets/alien.imageset/alien.png differ
+diff --git a/Numtura/Assets.xcassets/astronaut.imageset/Contents.json b/Numtura/Assets.xcassets/astronaut.imageset/Contents.json
+new file mode 100644
+index 0000000..31a3c94
+--- /dev/null
++++ b/Numtura/Assets.xcassets/astronaut.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "astronaut.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/astronaut.imageset/astronaut.png b/Numtura/Assets.xcassets/astronaut.imageset/astronaut.png
+new file mode 100644
+index 0000000..efa2c22
+Binary files /dev/null and b/Numtura/Assets.xcassets/astronaut.imageset/astronaut.png differ
+diff --git a/Numtura/Assets.xcassets/cohetenum.imageset/Contents.json b/Numtura/Assets.xcassets/cohetenum.imageset/Contents.json
+new file mode 100644
+index 0000000..1697891
+--- /dev/null
++++ b/Numtura/Assets.xcassets/cohetenum.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "cohetenum.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/cohetenum.imageset/cohetenum.png b/Numtura/Assets.xcassets/cohetenum.imageset/cohetenum.png
+new file mode 100644
+index 0000000..6e88d32
+Binary files /dev/null and b/Numtura/Assets.xcassets/cohetenum.imageset/cohetenum.png differ
+diff --git a/Numtura/Assets.xcassets/planet01.imageset/4.png b/Numtura/Assets.xcassets/planet01.imageset/4.png
+new file mode 100644
+index 0000000..9b20a41
+Binary files /dev/null and b/Numtura/Assets.xcassets/planet01.imageset/4.png differ
+diff --git a/Numtura/Assets.xcassets/planet01.imageset/Contents.json b/Numtura/Assets.xcassets/planet01.imageset/Contents.json
+new file mode 100644
+index 0000000..6ebd06d
+--- /dev/null
++++ b/Numtura/Assets.xcassets/planet01.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "4.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/planet02.imageset/3.png b/Numtura/Assets.xcassets/planet02.imageset/3.png
+new file mode 100644
+index 0000000..0e95a1c
+Binary files /dev/null and b/Numtura/Assets.xcassets/planet02.imageset/3.png differ
+diff --git a/Numtura/Assets.xcassets/planet02.imageset/Contents.json b/Numtura/Assets.xcassets/planet02.imageset/Contents.json
+new file mode 100644
+index 0000000..53eb8f1
+--- /dev/null
++++ b/Numtura/Assets.xcassets/planet02.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "3.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/planet03.imageset/2.png b/Numtura/Assets.xcassets/planet03.imageset/2.png
+new file mode 100644
+index 0000000..2f801df
+Binary files /dev/null and b/Numtura/Assets.xcassets/planet03.imageset/2.png differ
+diff --git a/Numtura/Assets.xcassets/planet03.imageset/Contents.json b/Numtura/Assets.xcassets/planet03.imageset/Contents.json
+new file mode 100644
+index 0000000..c6348dd
+--- /dev/null
++++ b/Numtura/Assets.xcassets/planet03.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "2.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/robot.imageset/Contents.json b/Numtura/Assets.xcassets/robot.imageset/Contents.json
+new file mode 100644
+index 0000000..c2a662d
+--- /dev/null
++++ b/Numtura/Assets.xcassets/robot.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "robot.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/robot.imageset/robot.png b/Numtura/Assets.xcassets/robot.imageset/robot.png
+new file mode 100644
+index 0000000..aeace20
+Binary files /dev/null and b/Numtura/Assets.xcassets/robot.imageset/robot.png differ
+diff --git a/Numtura/Assets.xcassets/wave1.imageset/Contents.json b/Numtura/Assets.xcassets/wave1.imageset/Contents.json
+new file mode 100644
+index 0000000..3ba006c
+--- /dev/null
++++ b/Numtura/Assets.xcassets/wave1.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "wave1.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/wave1.imageset/wave1.png b/Numtura/Assets.xcassets/wave1.imageset/wave1.png
+new file mode 100644
+index 0000000..106f82f
+Binary files /dev/null and b/Numtura/Assets.xcassets/wave1.imageset/wave1.png differ
+diff --git a/Numtura/Assets.xcassets/wave2.imageset/Contents.json b/Numtura/Assets.xcassets/wave2.imageset/Contents.json
+new file mode 100644
+index 0000000..fada49e
+--- /dev/null
++++ b/Numtura/Assets.xcassets/wave2.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "wave2.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/wave2.imageset/wave2.png b/Numtura/Assets.xcassets/wave2.imageset/wave2.png
+new file mode 100644
+index 0000000..01933b7
+Binary files /dev/null and b/Numtura/Assets.xcassets/wave2.imageset/wave2.png differ
+diff --git a/Numtura/Assets.xcassets/wave3.imageset/Contents.json b/Numtura/Assets.xcassets/wave3.imageset/Contents.json
+new file mode 100644
+index 0000000..baa5528
+--- /dev/null
++++ b/Numtura/Assets.xcassets/wave3.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "wave3.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/wave3.imageset/wave3.png b/Numtura/Assets.xcassets/wave3.imageset/wave3.png
+new file mode 100644
+index 0000000..51ad92e
+Binary files /dev/null and b/Numtura/Assets.xcassets/wave3.imageset/wave3.png differ
+diff --git a/Numtura/Assets.xcassets/wave4.imageset/Contents.json b/Numtura/Assets.xcassets/wave4.imageset/Contents.json
+new file mode 100644
+index 0000000..e17cbcc
+--- /dev/null
++++ b/Numtura/Assets.xcassets/wave4.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "wave4.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/wave4.imageset/wave4.png b/Numtura/Assets.xcassets/wave4.imageset/wave4.png
+new file mode 100644
+index 0000000..4c68b05
+Binary files /dev/null and b/Numtura/Assets.xcassets/wave4.imageset/wave4.png differ
+diff --git a/Numtura/Assets.xcassets/wave5.imageset/Contents.json b/Numtura/Assets.xcassets/wave5.imageset/Contents.json
+new file mode 100644
+index 0000000..fa60c00
+--- /dev/null
++++ b/Numtura/Assets.xcassets/wave5.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "wave5.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/Numtura/Assets.xcassets/wave5.imageset/wave5.png b/Numtura/Assets.xcassets/wave5.imageset/wave5.png
+new file mode 100644
+index 0000000..17c0bbf
+Binary files /dev/null and b/Numtura/Assets.xcassets/wave5.imageset/wave5.png differ
+diff --git a/Numtura/Colors.swift b/Numtura/Colors.swift
+new file mode 100644
+index 0000000..a7d5be2
+--- /dev/null
++++ b/Numtura/Colors.swift
+@@ -0,0 +1,19 @@
++import SwiftUI
++
++extension Color {
++    public static let backgroundColor: Color = Color(UIColor(red: 50/255, green: 52/255, blue: 63/255, alpha: 1.0))
++    public static let waveColor: Color = Color(UIColor(red: 60/255, green: 62/255, blue: 75/255, alpha: 1.0))
++    public static let planetFrameColor: Color = Color(UIColor(red: 98/255, green: 98/255, blue: 102/255, alpha: 1.0))
++    
++    //Colores extraidos de los planetas
++    
++    public static let planet1C1: Color = Color(UIColor(red: 129/255, green: 208/255, blue: 255/255, alpha: 1.0))
++    public static let planet1C2: Color = Color(UIColor(red: 197/255, green: 33/255, blue: 224/255, alpha: 1.0))
++    public static let planet2C1: Color = Color(UIColor(red: 0/255, green: 255/255, blue: 250/255, alpha: 1.0))
++    public static let planet2C2: Color = Color(UIColor(red: 1/255, green: 245/255, blue: 171/255, alpha: 1.0))
++    public static let planet3C1: Color = Color(UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0))
++    public static let planet3C2: Color = Color(UIColor(red: 255/255, green: 139/255, blue: 76/255, alpha: 1.0))
++    
++    //
++    
++}
+diff --git a/Numtura/ContentView.swift b/Numtura/ContentView.swift
+index 4bef8ec..24ff3cc 100644
+--- a/Numtura/ContentView.swift
++++ b/Numtura/ContentView.swift
+@@ -1,21 +1,120 @@
+-//
+-//  ContentView.swift
+-//  Numtura
+-//
+-//  Created by Pedro Prado on 13/09/23.
+-//
+-
+ import SwiftUI
+-
++import Combine
++//Esto no va en el content
+ struct ContentView: View {
++    @State private var smallStars: [Star] = []
++    @State private var mediumStars: [Star] = []
++    @State private var largeStars: [Star] = []
++    @State var offsets: [UUID: CGSize] = [:]
++    
+     var body: some View {
+-        VStack {
+-            Image(systemName: "globe")
+-                .imageScale(.large)
+-                .foregroundColor(.accentColor)
+-            Text("Hello, world!")
++        ZStack {
++            Color.backgroundColor
++                .edgesIgnoringSafeArea(.all)
++            
++            VStack {
++                            
++                Image("wave1")
++                .resizable()
++                Image("wave4")
++                .resizable()
++                        }
++                        .frame(width: 1000, height: 1200, alignment: .center)
++            
++            VStack {
++                Image("cohetenum")
++                    .resizable()
++                    .frame(width: 490, height: 270, alignment: .center)
++                // Texto con efecto de glow
++                Text("N U M T U R A")
++                    .font(.custom("Montserrat", size: 60))
++                    .fontWeight(.bold)
++                    .foregroundColor(Color.white)
++                    .shadow(color: .white, radius: 10, x: 0.0, y: 0.0)
++                
++                // Línea debajo del texto
++                Rectangle()
++                    .frame(height: 5)
++                    .foregroundColor(.white)
++                    .shadow(color: .white, radius: 10, x: 0.0, y: 0.0)
++                    .padding([.leading, .trailing], 290)
++                Text("Hora de iniciar tu aventura")
++                    .font(.custom("Montserrat", size: 32))
++                    .foregroundColor(Color.white)
++                    
++                
++                // Botón "Explorar" con efecto de glow
++                Button("EXPLORAR") {
++                }
++                .font(.custom("Montserrat", size: 32))                .padding()
++                .foregroundColor(Color.white)
++                .shadow(color: .white, radius: 10, x: 0.0, y: 0.0)
++                .cornerRadius(20)
++                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white.opacity(0.2), lineWidth: 5))
++            }
++
++
++            
++            drawStars(stars: smallStars, offsets: offsets)
++            drawStars(stars: mediumStars, offsets: offsets)
++            drawStars(stars: largeStars, offsets: offsets)
++        }
++        .onAppear {
++            generateStars()
++            
++            // Actualizar los offsets cada 2 segundos
++            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
++                for star in smallStars + mediumStars + largeStars {
++                    offsets[star.id] = CGSize(
++                        width: CGFloat.random(in: -10...20),
++                        height: CGFloat.random(in: -10...20)
++                    )
++                }
++            }
++        }
++    }
++    
++    func drawStars(stars: [Star], offsets: [UUID: CGSize]) -> some View {
++        ForEach(stars) { star in
++            Circle()
++                .frame(width: star.initialSize, height: star.initialSize)
++                .foregroundColor(.white)
++                .opacity(0.8)
++                .position(x: star.x, y: star.y)
++                .scaleEffect(star.scale)
++                .offset(offsets[star.id] ?? CGSize.zero)
++                .animation(
++                    Animation.easeInOut(duration: star.duration)
++                        .repeatForever(autoreverses: true),
++                    value: offsets[star.id]
++                )
++        }
++    }
++    
++    func generateStars() {
++        for _ in 0..<40 {
++            smallStars.append(Star.makeRandomStar(maxSize: 4))
++            mediumStars.append(Star.makeRandomStar(maxSize: 8))
++            largeStars.append(Star.makeRandomStar(maxSize: 12))
+         }
+-        .padding()
++    }
++}
++
++struct Star: Identifiable {
++    let id = UUID()
++    var x: CGFloat
++    var y: CGFloat
++    var initialSize: CGFloat
++    var scale: CGFloat
++    var duration: Double
++    
++    static func makeRandomStar(maxSize: CGFloat) -> Star {
++        let x = CGFloat.random(in: 0..<1024)
++        let y = CGFloat.random(in: 0..<1366)
++        let initialSize = CGFloat.random(in: 3...maxSize)
++        let scale = CGFloat.random(in: 1.01...1.05)
++        let duration = Double.random(in: 3...6)
++        return Star(x: x, y: y, initialSize: initialSize, scale: scale, duration: duration)
+     }
+ }
+ 
+@@ -24,3 +123,5 @@ struct ContentView_Previews: PreviewProvider {
+         ContentView()
+     }
+ }
++            
++           
+diff --git a/Numtura/NumturaApp.swift b/Numtura/NumturaApp.swift
+index 2489626..ccbfaa6 100644
+--- a/Numtura/NumturaApp.swift
++++ b/Numtura/NumturaApp.swift
+@@ -1,9 +1,3 @@
+-//
+-//  NumturaApp.swift
+-//  Numtura
+-//
+-//  Created by Pedro Prado on 13/09/23.
+-//
+ 
+ import SwiftUI
+ 
+diff --git a/Numtura/PlanetView.swift b/Numtura/PlanetView.swift
+new file mode 100644
+index 0000000..cf84736
+--- /dev/null
++++ b/Numtura/PlanetView.swift
+@@ -0,0 +1,223 @@
++import SwiftUI
++
++struct PlanetView: View {
++    @State private var selectedIndex = 0
++    @State private var scale: CGFloat = 1.0
++    @State private var smallStars: [Star] = []
++    @State private var mediumStars: [Star] = []
++    @State private var largeStars: [Star] = []
++    @State var offsets: [UUID: CGSize] = [:]
++    @State var timer: Timer?
++    
++    let planetImages = ["planet01", "planet02", "planet03"]
++    let cardBorderColors: [[Color]] = [[.planet3C1, .planet3C2],  [.planet2C1, .planet2C2], [.planet1C1, .planet1C2]]
++    
++    var body: some View {
++        ZStack {
++            Color.backgroundColor
++            
++            VStack {
++                Image("wave2")
++                    .resizable()
++                Image("wave1")
++                    .resizable()
++            }
++            .frame(width: 1000, height: 1200, alignment: .center)
++            
++            Image("Moon2")
++                .resizable()
++                .scaledToFit()
++                .frame(width: 100, height: 100)
++                .offset(x: CGFloat(selectedIndex - 1) * 40, y: -500)
++                .animation(.easeInOut(duration: 0.5))
++            
++            drawStars(stars: smallStars, offsets: offsets)
++            drawStars(stars: mediumStars, offsets: offsets)
++            drawStars(stars: largeStars, offsets: offsets)
++            
++            VStack {
++                TabView(selection: $selectedIndex) {
++                    ForEach(0..<3) { index in
++                        CardView(content: ["ARIM", "GEOS", "NEWT"][index],
++                                 description: ["Planeta de aritmetica.",
++                                               "Planeta de geometría.",
++                                               "Planeta de física."][index],
++                                 gradientColors: cardBorderColors[index],
++                                 planetImage: planetImages[index],
++                                 scale: $scale,
++                                 index: index,
++                                 buttonAction: {
++                                    performAction(index: index)
++                                 })
++                            .rotationEffect(.degrees(selectedIndex == index ? 0 : -10))
++                            .tag(index)
++                    }
++                }
++                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
++                .animation(.easeInOut(duration: 0.5))
++                
++                HStack {
++                    ForEach(0..<3) { index in
++                        ZStack {
++                            Circle()
++                                .stroke(lineWidth: selectedIndex == index ? 4 : 2)
++                                .frame(width: selectedIndex == index ? 44 : 22, height: selectedIndex == index ? 44 : 22)
++                                .foregroundColor(.white)
++                                .onTapGesture {
++                                    selectedIndex = index
++                                }
++                            
++                            if selectedIndex == index {
++                                Circle()
++                                    .frame(width: 30, height: 30)
++                                    .overlay(
++                                        LinearGradient(gradient: Gradient(colors: cardBorderColors[index]), startPoint: .leading, endPoint: .trailing)
++                                            .mask(Circle())
++                                    )
++                            }
++                        }
++                        .padding(.bottom, 100)
++                        .animation(.easeInOut(duration: 0.3))
++                    }
++                    .padding(40)
++                }
++            }
++        }
++        .onAppear() {
++            withAnimation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
++                scale = 1.1
++            }
++            generateStars()
++            
++            // Actualizar los offsets cada 2 segundos
++            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
++                for star in smallStars + mediumStars + largeStars {
++                    offsets[star.id] = CGSize(
++                        width: CGFloat.random(in: -10...20),
++                        height: CGFloat.random(in: -10...20)
++                    )
++                }
++            }
++        }
++        .onDisappear() {
++            self.timer?.invalidate()
++            self.timer = nil
++        }
++    }
++    
++    func drawStars(stars: [Star], offsets: [UUID: CGSize]) -> some View {
++        ForEach(stars) { star in
++            Circle()
++                .frame(width: star.initialSize, height: star.initialSize)
++                .foregroundColor(.white)
++                .opacity(0.8)
++                .position(x: star.x, y: star.y)
++                .scaleEffect(star.scale)
++                .offset(offsets[star.id] ?? CGSize.zero)
++                .animation(
++                    Animation.easeInOut(duration: star.duration)
++                        .repeatForever(autoreverses: true),
++                    value: offsets[star.id]
++                )
++        }
++    }
++    
++    func generateStars() {
++        for _ in 0..<20 {
++            smallStars.append(Star.makeRandomStar(maxSize: 4))
++            mediumStars.append(Star.makeRandomStar(maxSize: 8))
++            largeStars.append(Star.makeRandomStar(maxSize: 12))
++        }
++    }
++    
++    func performAction(index: Int) {
++        // Aquí, puedes añadir las acciones de cada tarjeta
++        print("Acción para la tarjeta \(index)")
++    }
++}
++func performAction(index: Int) {
++       switch index {
++       case 0:
++           print("Redirigiendo a otra vista para la tarjeta 0")
++           // Aquí puedes añadir el código para redirigir a otra vista
++       case 1:
++           print("Acción de impresión para la tarjeta 1")
++       case 2:
++           print("Acción para la tarjeta 2")
++       default:
++           break
++       }
++   }
++
++struct CardView: View {
++   var content: String
++   var description: String
++   var gradientColors: [Color]
++   var planetImage: String
++   @Binding var scale: CGFloat
++   var index: Int
++   var buttonAction: () -> Void
++   
++   var body: some View {
++       ZStack {
++           RoundedRectangle(cornerRadius: 25)
++               .fill(Color.planetFrameColor.opacity(0.3))
++               .frame(width: 600, height: 600)
++               .overlay(
++                   RoundedRectangle(cornerRadius: 25)
++                       .stroke(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .leading, endPoint: .trailing), lineWidth: 7)
++               )
++               .padding(.top, 100)
++           
++           VStack {
++               ZStack {
++                   Circle()
++                       .stroke(Color.white, lineWidth: 8)
++                       .frame(width: 350, height: 420)
++                       .shadow(color: .white, radius: 8, x: 0, y: 0)
++                       .offset(y: -230)
++                   
++                   Image(planetImage)
++                       .resizable()
++                       .scaledToFit()
++                       .frame(width: index == 0 ? 650 : (index == 1 ? 675 : 670),
++                              height: index == 0 ? 410 : (index == 1 ? 390 : 410))
++                       .scaleEffect(scale)
++                       .offset(x: index == 0 ? 23 : (index == 1 ? 11 : 13),
++                               y: index == 0 ? -231 : (index == 1 ? -233 : -229))
++               }
++               .padding(.top, 120)
++               
++               VStack {
++                   Text(content)
++                       .font(.custom("Montserrat", size: 60))                       .foregroundColor(.white)
++                       .shadow(color: .white, radius: 5, x: 0, y: 0)
++                       .padding(.top, -240) 
++                   
++                   Text(description)
++                       .font(.custom("Montserrat", size: 20))                       .foregroundColor(.white)
++                       .padding(.top, -200)
++                   
++                   Button(action: buttonAction) {
++                       Text("IR")
++                           .font(.custom("Montserrat", size: 20))
++                           .foregroundColor(.black)
++                           .padding(.trailing, 40)
++                           .padding(.leading, 40)
++                           .padding()
++                           .background(Color.white)
++                           .cornerRadius(40)
++                   }
++                   
++               }
++           }
++       }
++       .padding(.top, 140)
++   }
++}
++
++struct PlanetView_Previews: PreviewProvider {
++   static var previews: some View {
++       PlanetView()
++   }
++}
+diff --git a/Numtura/Test.swift b/Numtura/Test.swift
+new file mode 100644
+index 0000000..4e21a0f
+--- /dev/null
++++ b/Numtura/Test.swift
+@@ -0,0 +1,158 @@
++//import SwiftUI
++//
++//struct TypingTextView: View {
++//    let textToDisplay: String
++//    @State private var displayedText: String = ""
++//    @State private var textIndex: Int = 0
++//
++//    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
++//
++//    var body: some View {
++//        VStack {
++//            Text(displayedText)
++//                .onReceive(timer) { _ in
++//                    if textIndex < textToDisplay.count {
++//                        displayedText.append(textToDisplay[textToDisplay.index(textToDisplay.startIndex, offsetBy: textIndex)])
++//                        textIndex += 1
++//                    } else {
++//                        timer.upstream.connect().cancel()
++//                    }
++//                }
++//        }
++//        .onAppear {
++//            displayedText = ""
++//            textIndex = 0
++//        }
++//    }
++//}
++//
++//struct TypingTextView_Previews: PreviewProvider {
++//    static var previews: some View {
++//        TypingTextView(textToDisplay: "¡Es tiempo de carrera espacial!  Tu misión será calcular la velocidad de tu cohete para poder ganar la carrera y llegar en primer lugar")
++//    }
++//}
++//
++
++
++
++//-----------------------------------------------------------------------------------------------------------------------
++//import SwiftUI
++//
++//struct JustifiedTextView: UIViewRepresentable {
++//    let text: String
++//    let colorKeywords: [String]
++//    let boldKeywords: [String]
++//    let keywordColor: UIColor
++//
++//    func makeUIView(context: Context) -> UITextView {
++//        let textView = UITextView()
++//        textView.isEditable = true
++//        textView.isScrollEnabled = false
++//        textView.backgroundColor = .clear
++//
++//        let attributedString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font : UIFont(name: "Montserrat", size: 20) ?? UIFont.systemFont(ofSize: 20)])
++//
++//        for keyword in colorKeywords {
++//            let range = (text as NSString).range(of: keyword, options: .caseInsensitive)
++//            attributedString.addAttribute(.foregroundColor, value: keywordColor, range: range)
++//        }
++//
++//        for keyword in boldKeywords {
++//            let range = (text as NSString).range(of: keyword, options: .caseInsensitive)
++//            if let boldFont = UIFont(name: "Impact", size: 20) {
++//                attributedString.addAttribute(.font, value: boldFont, range: range)
++//            }
++//        }
++//
++//        textView.attributedText = attributedString
++//        textView.textAlignment = .justified
++//        textView.textContainerInset = UIEdgeInsets.zero
++//        textView.sizeToFit() // Ajustar al tamaño del contenido
++//
++//        return textView
++//    }
++//
++//    func updateUIView(_ uiView: UITextView, context: Context) {
++//        uiView.setContentOffset(.zero, animated: false)
++//    }
++//
++//    typealias UIViewType = UITextView
++//}
++//
++//struct Test: View {
++//    var body: some View {
++//        GeometryReader { geometry in
++//            ZStack {
++//                Color.green
++//                JustifiedTextView(text: "Párrafo de ejemplo donde algunas palabras clave como ejemplo",
++//                                  colorKeywords: ["ejemplo", "palabras"],
++//                                  boldKeywords: ["Párrafo", "resaltadas"],
++//                                  keywordColor: .red)
++//                    .padding(20)
++//            }
++//            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
++//        }
++//    }
++//}
++//
++//struct Test_Previews: PreviewProvider {
++//    static var previews: some View {
++//        Test()
++//    }
++//}
++
++import SwiftUI
++
++struct ExpandableView: View {
++    @State private var isExpanded = false
++    @State private var showText = false
++    @Namespace private var animationNamespace
++
++    var body: some View {
++        ZStack {
++            Color.backgroundColor
++
++            HStack(spacing: 10) {
++                Image("astronaut")
++                    .resizable()
++                    .scaledToFit()
++                    .frame(width: isExpanded ? 140 : 100)
++                    .matchedGeometryEffect(id: "image", in: animationNamespace)
++                
++                if isExpanded {
++                    Text("Este es el texto que quieres mostrar.")
++                        .font(.custom("Montserrat", size: 20))
++                        .opacity(showText ? 1.0 : 0.0)  // Controlar la opacidad según el estado
++                        .transition(.move(edge: .trailing))
++                }
++            }
++            .padding()
++            .background(RoundedRectangle(cornerRadius: 25).fill(Color.white))
++            .onTapGesture {
++                withAnimation {
++                    isExpanded.toggle()
++                }
++
++                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
++                    withAnimation {
++                        showText = isExpanded ? true : false
++                    }
++                }
++            }
++        }
++    }
++}
++
++struct Test: View {
++    var body: some View {
++        ExpandableView()
++            .padding()
++    }
++}
++
++struct Test_Previews: PreviewProvider {
++    static var previews: some View {
++        Test()
++    }
++}
++
+diff --git a/NumturaTests/NumturaTests.swift b/NumturaTests/NumturaTests.swift
+index 55bc072..bc9149b 100644
+--- a/NumturaTests/NumturaTests.swift
++++ b/NumturaTests/NumturaTests.swift
+@@ -1,10 +1,3 @@
+-//
+-//  NumturaTests.swift
+-//  NumturaTests
+-//
+-//  Created by Pedro Prado on 13/09/23.
+-//
+-
+ import XCTest
+ @testable import Numtura
+ 
+diff --git a/NumturaUITests/NumturaUITests.swift b/NumturaUITests/NumturaUITests.swift
+index f570ab9..eb41463 100644
+--- a/NumturaUITests/NumturaUITests.swift
++++ b/NumturaUITests/NumturaUITests.swift
+@@ -1,10 +1,3 @@
+-//
+-//  NumturaUITests.swift
+-//  NumturaUITests
+-//
+-//  Created by Pedro Prado on 13/09/23.
+-//
+-
+ import XCTest
+ 
+ final class NumturaUITests: XCTestCase {
+diff --git a/NumturaUITests/NumturaUITestsLaunchTests.swift b/NumturaUITests/NumturaUITestsLaunchTests.swift
+index d68840b..c40febe 100644
+--- a/NumturaUITests/NumturaUITestsLaunchTests.swift
++++ b/NumturaUITests/NumturaUITestsLaunchTests.swift
+@@ -1,10 +1,3 @@
+-//
+-//  NumturaUITestsLaunchTests.swift
+-//  NumturaUITests
+-//
+-//  Created by Pedro Prado on 13/09/23.
+-//
+-
+ import XCTest
+ 
+ final class NumturaUITestsLaunchTests: XCTestCase {
+diff --git a/Planet1View.swift b/Planet1View.swift
+new file mode 100644
+index 0000000..9e91588
+--- /dev/null
++++ b/Planet1View.swift
+@@ -0,0 +1,14 @@
++import SwiftUI
++
++struct Planet1View: View {
++    var body: some View {
++        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
++        
++    }
++}
++
++struct Planet1View_Previews: PreviewProvider {
++    static var previews: some View {
++        Planet1View()
++    }
++}
+diff --git a/Planet2View.swift b/Planet2View.swift
+new file mode 100644
+index 0000000..8b13789
+--- /dev/null
++++ b/Planet2View.swift
+@@ -0,0 +1 @@
++
+diff --git a/Planet3View.swift b/Planet3View.swift
+new file mode 100644
+index 0000000..8b13789
+--- /dev/null
++++ b/Planet3View.swift
+@@ -0,0 +1 @@
++
