@@ -1,5 +1,5 @@
 //
-//  test.swift
+//  Colors.swift
 //  Numtura
 //
 //  Created by Pedro Prado on 06/10/23.
