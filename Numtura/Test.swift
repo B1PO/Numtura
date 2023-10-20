@@ -110,8 +110,6 @@ struct ExpandableView: View {
 
     var body: some View {
         ZStack {
-            Color.backgroundColor
-
             HStack(spacing: 10) {
                 Image("astronaut")
                     .resizable()

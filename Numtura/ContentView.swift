@@ -2,24 +2,10 @@ import SwiftUI
 import Combine
 //Esto no va en el content
 struct ContentView: View {
-    @State private var smallStars: [Star] = []
-    @State private var mediumStars: [Star] = []
-    @State private var largeStars: [Star] = []
-    @State var offsets: [UUID: CGSize] = [:]
     
     var body: some View {
         ZStack {
-            Color.backgroundColor
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                            
-                Image("wave1")
-                .resizable()
-                Image("wave4")
-                .resizable()
-                        }
-                        .frame(width: 1000, height: 1200, alignment: .center)
+            BackgroundView()
             
             VStack {
                 Image("cohetenum")
@@ -52,52 +38,9 @@ struct ContentView: View {
                 .cornerRadius(20)
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white.opacity(0.2), lineWidth: 5))
             }
-
-
-            
-            drawStars(stars: smallStars, offsets: offsets)
-            drawStars(stars: mediumStars, offsets: offsets)
-            drawStars(stars: largeStars, offsets: offsets)
-        }
-        .onAppear {
-            generateStars()
-            
-            // Actualizar los offsets cada 2 segundos
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-                for star in smallStars + mediumStars + largeStars {
-                    offsets[star.id] = CGSize(
-                        width: CGFloat.random(in: -10...20),
-                        height: CGFloat.random(in: -10...20)
-                    )
-                }
-            }
         }
     }
     
-    func drawStars(stars: [Star], offsets: [UUID: CGSize]) -> some View {
-        ForEach(stars) { star in
-            Circle()
-                .frame(width: star.initialSize, height: star.initialSize)
-                .foregroundColor(.white)
-                .opacity(0.8)
-                .position(x: star.x, y: star.y)
-                .scaleEffect(star.scale)
-                .offset(offsets[star.id] ?? CGSize.zero)
-                .animation(
-                    Animation.easeInOut(duration: star.duration)
-                        .repeatForever(autoreverses: true),
-                    value: offsets[star.id]
-                )
-        }
-    }
-    
-    func generateStars() {
-        for _ in 0..<40 {
-            smallStars.append(Star.makeRandomStar(maxSize: 4))
-            mediumStars.append(Star.makeRandomStar(maxSize: 8))
-            largeStars.append(Star.makeRandomStar(maxSize: 12))
-        }
-    }
 }
 
 struct Star: Identifiable {
@@ -123,3 +66,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

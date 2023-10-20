@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Background: View {
+struct BackgroundView: View {
     @State private var scale: CGFloat = 1.0
     @State private var smallStars: [Star] = []
     @State private var mediumStars: [Star] = []
@@ -75,6 +75,6 @@ struct Background: View {
 }
 
 #Preview {
-    Background()
+    BackgroundView()
 }
 

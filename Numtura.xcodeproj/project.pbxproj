@@ -10,10 +10,11 @@
 		6C49A5C12AD0FA1D00F5566E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C02AD0FA1D00F5566E /* Colors.swift */; };
 		6C49A5C32AD0FA2F00F5566E /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C22AD0FA2F00F5566E /* PlanetView.swift */; };
 		6C49A5C52AD0FA8D00F5566E /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C42AD0FA8D00F5566E /* test.swift */; };
-		6C49A5C82ADDC29300F5566E /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C72ADDC29300F5566E /* MainScreen.swift */; };
+		6C49A5C82ADDC29300F5566E /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C72ADDC29300F5566E /* MainScreenView.swift */; };
 		6C49A5CA2ADDF45700F5566E /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C49A5C92ADDF45700F5566E /* Montserrat.ttf */; };
 		6C49A5CB2ADDF45700F5566E /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C49A5C92ADDF45700F5566E /* Montserrat.ttf */; };
 		6C49A5CC2ADDF45700F5566E /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C49A5C92ADDF45700F5566E /* Montserrat.ttf */; };
+		6C49A5CF2AE1B06500F5566E /* FullPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5CE2AE1B06500F5566E /* FullPlanetView.swift */; };
 		6C7C7C792AB2909100EEC316 /* NumturaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C782AB2909100EEC316 /* NumturaApp.swift */; };
 		6C7C7C7B2AB2909100EEC316 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C7A2AB2909100EEC316 /* ContentView.swift */; };
 		6C7C7C7D2AB2909200EEC316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7C7C7C2AB2909200EEC316 /* Assets.xcassets */; };
@@ -21,6 +22,9 @@
 		6C7C7C8A2AB2909200EEC316 /* NumturaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C892AB2909200EEC316 /* NumturaTests.swift */; };
 		6C7C7C942AB2909200EEC316 /* NumturaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C932AB2909200EEC316 /* NumturaUITests.swift */; };
 		6C7C7C962AB2909200EEC316 /* NumturaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C952AB2909200EEC316 /* NumturaUITestsLaunchTests.swift */; };
+		6C8731412AE3083F007B081F /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731402AE3083F007B081F /* BackgroundView.swift */; };
+		6C8731432AE30889007B081F /* RocketLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731422AE30889007B081F /* RocketLoadingView.swift */; };
+		6C8731482AE30ACC007B081F /* GeometryEx1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731472AE30ACC007B081F /* GeometryEx1View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +48,10 @@
 		6C49A5C02AD0FA1D00F5566E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6C49A5C22AD0FA2F00F5566E /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
 		6C49A5C42AD0FA8D00F5566E /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
-		6C49A5C72ADDC29300F5566E /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		6C49A5C72ADDC29300F5566E /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		6C49A5C92ADDF45700F5566E /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		6C49A5CD2ADDF63900F5566E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C49A5CE2AE1B06500F5566E /* FullPlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPlanetView.swift; sourceTree = "<group>"; };
 		6C7C7C752AB2909100EEC316 /* Numtura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numtura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7C7C782AB2909100EEC316 /* NumturaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumturaApp.swift; sourceTree = "<group>"; };
 		6C7C7C7A2AB2909100EEC316 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +62,9 @@
 		6C7C7C8F2AB2909200EEC316 /* NumturaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumturaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7C7C932AB2909200EEC316 /* NumturaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumturaUITests.swift; sourceTree = "<group>"; };
 		6C7C7C952AB2909200EEC316 /* NumturaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumturaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6C8731402AE3083F007B081F /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		6C8731422AE30889007B081F /* RocketLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLoadingView.swift; sourceTree = "<group>"; };
+		6C8731472AE30ACC007B081F /* GeometryEx1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryEx1View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 		6C7C7C6C2AB2909100EEC316 = {
 			isa = PBXGroup;
 			children = (
+				6C8731462AE30AA0007B081F /* Exercises */,
 				6C49A5C62ADDBDB400F5566E /* Font */,
 				6C7C7C772AB2909100EEC316 /* Numtura */,
 				6C7C7C882AB2909200EEC316 /* NumturaTests */,
@@ -119,10 +128,13 @@
 				6C49A5CD2ADDF63900F5566E /* Info.plist */,
 				6C7C7C782AB2909100EEC316 /* NumturaApp.swift */,
 				6C7C7C7A2AB2909100EEC316 /* ContentView.swift */,
+				6C8731402AE3083F007B081F /* BackgroundView.swift */,
 				6C49A5C02AD0FA1D00F5566E /* Colors.swift */,
 				6C49A5C42AD0FA8D00F5566E /* test.swift */,
 				6C49A5C22AD0FA2F00F5566E /* PlanetView.swift */,
-				6C49A5C72ADDC29300F5566E /* MainScreen.swift */,
+				6C8731422AE30889007B081F /* RocketLoadingView.swift */,
+				6C49A5CE2AE1B06500F5566E /* FullPlanetView.swift */,
+				6C49A5C72ADDC29300F5566E /* MainScreenView.swift */,
 				6C7C7C7C2AB2909200EEC316 /* Assets.xcassets */,
 				6C7C7C7E2AB2909200EEC316 /* Preview Content */,
 			);
@@ -152,6 +164,14 @@
 				6C7C7C952AB2909200EEC316 /* NumturaUITestsLaunchTests.swift */,
 			);
 			path = NumturaUITests;
+			sourceTree = "<group>";
+		};
+		6C8731462AE30AA0007B081F /* Exercises */ = {
+			isa = PBXGroup;
+			children = (
+				6C8731472AE30ACC007B081F /* GeometryEx1View.swift */,
+			);
+			path = Exercises;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,12 +307,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C49A5C82ADDC29300F5566E /* MainScreen.swift in Sources */,
+				6C8731432AE30889007B081F /* RocketLoadingView.swift in Sources */,
+				6C49A5C82ADDC29300F5566E /* MainScreenView.swift in Sources */,
 				6C7C7C7B2AB2909100EEC316 /* ContentView.swift in Sources */,
 				6C49A5C12AD0FA1D00F5566E /* Colors.swift in Sources */,
+				6C8731412AE3083F007B081F /* BackgroundView.swift in Sources */,
 				6C49A5C32AD0FA2F00F5566E /* PlanetView.swift in Sources */,
 				6C49A5C52AD0FA8D00F5566E /* test.swift in Sources */,
 				6C7C7C792AB2909100EEC316 /* NumturaApp.swift in Sources */,
+				6C8731482AE30ACC007B081F /* GeometryEx1View.swift in Sources */,
+				6C49A5CF2AE1B06500F5566E /* FullPlanetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

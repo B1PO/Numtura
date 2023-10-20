@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RocketLoading: View {
+struct RocketLoadingView: View {
     var body: some View {
             
             VStack{
@@ -14,6 +14,6 @@ struct RocketLoading: View {
 }
 
 #Preview {
-    RocketLoading()
+    RocketLoadingView()
 }
 
