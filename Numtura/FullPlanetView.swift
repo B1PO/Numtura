@@ -7,7 +7,7 @@ struct FullPlanetView: View {
     var body: some View {
 
         ZStack {
-                ContentView()
+                BackgroundView()
             ZStack {
                 Circle()
                     .stroke(Color.white, lineWidth: 38)

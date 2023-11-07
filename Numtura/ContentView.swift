@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 //Esto no va en el content
 struct ContentView: View {
-    
+    @State var showPlanetView: Bool = false
     var body: some View {
         ZStack {
             BackgroundView()
@@ -28,15 +28,33 @@ struct ContentView: View {
                     .font(.custom("Montserrat", size: 32))
                     .foregroundColor(Color.white)
                     
-                
+    
                 // Botón "Explorar" con efecto de glow
-                Button("EXPLORAR") {
+                ZStack{
+                    Rectangle()
+                        .frame(width: 400, height: 70)
+                        .cornerRadius(20)
+                        .foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.40, alpha: 1.00)))
+                        .opacity(0.2)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color(UIColor(red: 0.60, green: 0.60, blue: 0.62, alpha: 1.00)), lineWidth: 5)
+                                .opacity(0.2)
+                        }
+                    
+                    Text("EXPLORAR")
+                        .font(.custom("Montserrat", size: 30))
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .shadow(color: .white, radius: 10, x: 0.0, y: 0.0)
+                }.onTapGesture {
+                    //Codigo a ejecutar simulando un Button
+                    showPlanetView.toggle()
                 }
-                .font(.custom("Montserrat", size: 32))                .padding()
-                .foregroundColor(Color.white)
-                .shadow(color: .white, radius: 10, x: 0.0, y: 0.0)
-                .cornerRadius(20)
-                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white.opacity(0.2), lineWidth: 5))
+                
+                .fullScreenCover(isPresented: $showPlanetView, content: {
+                    PlanetView()
+                })
             }
         }
     }

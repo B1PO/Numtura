@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C2E20E02AE98E50009E5E5F /* PhysicsEx2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2E20DF2AE98E50009E5E5F /* PhysicsEx2View.swift */; };
+		6C2E20E32AE99523009E5E5F /* PE1Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2E20E22AE99523009E5E5F /* PE1Dialog.swift */; };
 		6C49A5C12AD0FA1D00F5566E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C02AD0FA1D00F5566E /* Colors.swift */; };
 		6C49A5C32AD0FA2F00F5566E /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C22AD0FA2F00F5566E /* PlanetView.swift */; };
 		6C49A5C52AD0FA8D00F5566E /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5C42AD0FA8D00F5566E /* test.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C2E20DF2AE98E50009E5E5F /* PhysicsEx2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsEx2View.swift; sourceTree = "<group>"; };
+		6C2E20E22AE99523009E5E5F /* PE1Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PE1Dialog.swift; sourceTree = "<group>"; };
 		6C49A5C02AD0FA1D00F5566E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6C49A5C22AD0FA2F00F5566E /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
 		6C49A5C42AD0FA8D00F5566E /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
@@ -92,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C2E20E12AE9947B009E5E5F /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				6C2E20E22AE99523009E5E5F /* PE1Dialog.swift */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
 		6C49A5C62ADDBDB400F5566E /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 		6C7C7C6C2AB2909100EEC316 = {
 			isa = PBXGroup;
 			children = (
+				6C2E20E12AE9947B009E5E5F /* Dialog */,
 				6C8731462AE30AA0007B081F /* Exercises */,
 				6C49A5C62ADDBDB400F5566E /* Font */,
 				6C7C7C772AB2909100EEC316 /* Numtura */,
@@ -170,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				6C8731472AE30ACC007B081F /* GeometryEx1View.swift */,
+				6C2E20DF2AE98E50009E5E5F /* PhysicsEx2View.swift */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -313,7 +327,9 @@
 				6C49A5C12AD0FA1D00F5566E /* Colors.swift in Sources */,
 				6C8731412AE3083F007B081F /* BackgroundView.swift in Sources */,
 				6C49A5C32AD0FA2F00F5566E /* PlanetView.swift in Sources */,
+				6C2E20E02AE98E50009E5E5F /* PhysicsEx2View.swift in Sources */,
 				6C49A5C52AD0FA8D00F5566E /* test.swift in Sources */,
+				6C2E20E32AE99523009E5E5F /* PE1Dialog.swift in Sources */,
 				6C7C7C792AB2909100EEC316 /* NumturaApp.swift in Sources */,
 				6C8731482AE30ACC007B081F /* GeometryEx1View.swift in Sources */,
 				6C49A5CF2AE1B06500F5566E /* FullPlanetView.swift in Sources */,

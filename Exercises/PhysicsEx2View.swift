@@ -1,15 +1,30 @@
-//
-//  PhysicsEx2View.swift
-//  Numtura
-//
-//  Created by Pedro Prado on 25/10/23.
-//
-
 import SwiftUI
 
 struct PhysicsEx2View: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            BackgroundView()
+            VStack{
+                PE1Dialog()
+                
+                ZStack {
+                    Image("ufo")
+                        .resizable()
+                        .frame(width: 500, height: 500)
+                    Image("asteroid")
+                        .resizable()
+                        .frame(width: 250, height: 250)
+                        .padding(.leading, 550)
+                    Image("asteroid")
+                        .resizable()
+                        .frame(width: 250, height: 250)
+                        .padding(.trailing, 550)
+                }
+                
+                
+                
+            }
+        }
     }
 }
 
