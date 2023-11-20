@@ -27,6 +27,9 @@
 		6C8731412AE3083F007B081F /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731402AE3083F007B081F /* BackgroundView.swift */; };
 		6C8731432AE30889007B081F /* RocketLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731422AE30889007B081F /* RocketLoadingView.swift */; };
 		6C8731482AE30ACC007B081F /* GeometryEx1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731472AE30ACC007B081F /* GeometryEx1View.swift */; };
+		A09737682B03DB3600AE2080 /* StarEx1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09737672B03DB3600AE2080 /* StarEx1View.swift */; };
+		A097376A2B040A6C00AE2080 /* PhysicsEx3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09737692B040A6C00AE2080 /* PhysicsEx3View.swift */; };
+		A0C280B52AFF0640003267EA /* ArithmeticEx1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C280B42AFF0640003267EA /* ArithmeticEx1View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		6C8731402AE3083F007B081F /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		6C8731422AE30889007B081F /* RocketLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLoadingView.swift; sourceTree = "<group>"; };
 		6C8731472AE30ACC007B081F /* GeometryEx1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryEx1View.swift; sourceTree = "<group>"; };
+		A09737672B03DB3600AE2080 /* StarEx1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarEx1View.swift; sourceTree = "<group>"; };
+		A09737692B040A6C00AE2080 /* PhysicsEx3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsEx3View.swift; sourceTree = "<group>"; };
+		A0C280B42AFF0640003267EA /* ArithmeticEx1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticEx1View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +189,10 @@
 			isa = PBXGroup;
 			children = (
 				6C8731472AE30ACC007B081F /* GeometryEx1View.swift */,
+				A09737672B03DB3600AE2080 /* StarEx1View.swift */,
+				A0C280B42AFF0640003267EA /* ArithmeticEx1View.swift */,
 				6C2E20DF2AE98E50009E5E5F /* PhysicsEx2View.swift */,
+				A09737692B040A6C00AE2080 /* PhysicsEx3View.swift */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -324,8 +333,11 @@
 				6C8731432AE30889007B081F /* RocketLoadingView.swift in Sources */,
 				6C49A5C82ADDC29300F5566E /* MainScreenView.swift in Sources */,
 				6C7C7C7B2AB2909100EEC316 /* ContentView.swift in Sources */,
+				A0C280B52AFF0640003267EA /* ArithmeticEx1View.swift in Sources */,
 				6C49A5C12AD0FA1D00F5566E /* Colors.swift in Sources */,
+				A09737682B03DB3600AE2080 /* StarEx1View.swift in Sources */,
 				6C8731412AE3083F007B081F /* BackgroundView.swift in Sources */,
+				A097376A2B040A6C00AE2080 /* PhysicsEx3View.swift in Sources */,
 				6C49A5C32AD0FA2F00F5566E /* PlanetView.swift in Sources */,
 				6C2E20E02AE98E50009E5E5F /* PhysicsEx2View.swift in Sources */,
 				6C49A5C52AD0FA8D00F5566E /* test.swift in Sources */,
