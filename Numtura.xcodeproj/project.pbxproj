@@ -27,6 +27,8 @@
 		6C8731412AE3083F007B081F /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731402AE3083F007B081F /* BackgroundView.swift */; };
 		6C8731432AE30889007B081F /* RocketLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731422AE30889007B081F /* RocketLoadingView.swift */; };
 		6C8731482AE30ACC007B081F /* GeometryEx1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731472AE30ACC007B081F /* GeometryEx1View.swift */; };
+		9B0110C22B0AC826009EB318 /* ArimDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0110C12B0AC826009EB318 /* ArimDialogView.swift */; };
+		9B0110C62B0AD23A009EB318 /* menuArim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0110C52B0AD23A009EB318 /* menuArim.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		6C8731402AE3083F007B081F /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		6C8731422AE30889007B081F /* RocketLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLoadingView.swift; sourceTree = "<group>"; };
 		6C8731472AE30ACC007B081F /* GeometryEx1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryEx1View.swift; sourceTree = "<group>"; };
+		9B0110C12B0AC826009EB318 /* ArimDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArimDialogView.swift; sourceTree = "<group>"; };
+		9B0110C52B0AD23A009EB318 /* menuArim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuArim.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				6C2E20E22AE99523009E5E5F /* PE1Dialog.swift */,
+				9B0110C12B0AC826009EB318 /* ArimDialogView.swift */,
 			);
 			path = Dialog;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				6C49A5C22AD0FA2F00F5566E /* PlanetView.swift */,
 				6C8731422AE30889007B081F /* RocketLoadingView.swift */,
 				6C49A5CE2AE1B06500F5566E /* FullPlanetView.swift */,
+				9B0110C52B0AD23A009EB318 /* menuArim.swift */,
 				6C49A5C72ADDC29300F5566E /* MainScreenView.swift */,
 				6C7C7C7C2AB2909200EEC316 /* Assets.xcassets */,
 				6C7C7C7E2AB2909200EEC316 /* Preview Content */,
@@ -328,7 +334,9 @@
 				6C8731412AE3083F007B081F /* BackgroundView.swift in Sources */,
 				6C49A5C32AD0FA2F00F5566E /* PlanetView.swift in Sources */,
 				6C2E20E02AE98E50009E5E5F /* PhysicsEx2View.swift in Sources */,
+				9B0110C22B0AC826009EB318 /* ArimDialogView.swift in Sources */,
 				6C49A5C52AD0FA8D00F5566E /* test.swift in Sources */,
+				9B0110C62B0AD23A009EB318 /* menuArim.swift in Sources */,
 				6C2E20E32AE99523009E5E5F /* PE1Dialog.swift in Sources */,
 				6C7C7C792AB2909100EEC316 /* NumturaApp.swift in Sources */,
 				6C8731482AE30ACC007B081F /* GeometryEx1View.swift in Sources */,

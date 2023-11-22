@@ -11,10 +11,9 @@ extension Color {
     public static let planet1C2: Color = Color(UIColor(red: 197/255, green: 33/255, blue: 224/255, alpha: 1.0))
     public static let planet2C1: Color = Color(UIColor(red: 0/255, green: 255/255, blue: 250/255, alpha: 1.0))
     public static let planet2C2: Color = Color(UIColor(red: 1/255, green: 245/255, blue: 171/255, alpha: 1.0))
-    public static let planet3C1: Color = Color(UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0))
-    public static let planet3C2: Color = Color(UIColor(red: 255/255, green: 139/255, blue: 76/255, alpha: 1.0))
+    public static let planet3C1: Color = Color(UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0))
+    public static let planet3C2: Color = Color(UIColor(red: 255/255, green: 18/255, blue: 160/255, alpha: 1.0))
     
     //
     
 }
-

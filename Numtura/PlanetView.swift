@@ -6,9 +6,14 @@ struct PlanetView: View {
     @State var timer: Timer?
     @State var nav: Bool = false
     
-    
     let planetImages = ["planet01", "planet02", "planet03"]
+    let descriptionPlanet:[String]=[
+    "Este planeta esta lleno de aventuras donde la aritmética será la clave",
+    "Un planeta donde la geometría ha gobernado cada rincón",
+    "Encontrarás un mundo donde deberás utilizar tus conocimientos en fisíca para sobrevivir"
+    ]
     let cardBorderColors: [[Color]] = [[.planet3C1, .planet3C2],  [.planet2C1, .planet2C2], [.planet1C1, .planet1C2]]
+    let shadowColors:[[Color]]=[[.planet3C2], [.planet2C1], [.planet1C2]]
     
     var body: some View {
         ZStack {
@@ -28,10 +33,9 @@ struct PlanetView: View {
                 TabView(selection: $selectedIndex) {
                     ForEach(0..<3) { index in
                         CardView(content: ["ARIM", "GEOS", "NEWT"][index],
-                                 description: ["Planeta de aritmetica.",
-                                               "Planeta de geometría.",
-                                               "Planeta de física."][index],
+                                 description:descriptionPlanet[index],
                                  gradientColors: cardBorderColors[index],
+                                 primaryColor:shadowColors[index],
                                  planetImage: planetImages[index],
                                  scale: $scale,
                                  index: index,
@@ -95,98 +99,102 @@ struct PlanetView: View {
         // Aquí, puedes añadir las acciones de cada tarjeta
         print("Acción para la tarjeta \(index)")
         switch index {
-           case 0:
-               print("Redirigiendo a otra vista para la tarjeta 0")
-               // Aquí puedes añadir el código para redirigir a otra vista
-               
-            self.nav.toggle()
-            
-           case 1:
-               print("Acción de impresión para la tarjeta 1")
-            self.nav.toggle()
-
-           case 2:
-               print("Acción para la tarjeta 2")
-            self.nav.toggle()
-
-           default:
-               break
-           }
+            case 0:
+                print("Redirigiendo a otra vista para la tarjeta 0")
+                // Aquí puedes añadir el código para redirigir a otra vista
+                
+                self.nav.toggle()
+                
+            case 1:
+                print("Acción de impresión para la tarjeta 1")
+                self.nav.toggle()
+                
+            case 2:
+                print("Acción para la tarjeta 2")
+                self.nav.toggle()
+                
+            default:
+                break
+        }
     }
 }
 
 
 struct CardView: View {
-   var content: String
-   var description: String
-   var gradientColors: [Color]
-   var planetImage: String
-   @Binding var scale: CGFloat
-   var index: Int
-   var buttonAction: () -> Void
-       
-   var body: some View {
-       ZStack {
-           RoundedRectangle(cornerRadius: 25)
-               .fill(Color.planetFrameColor.opacity(0.3))
-               .frame(width: 600, height: 600)
-               .overlay(
-                   RoundedRectangle(cornerRadius: 25)
-                       .stroke(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .leading, endPoint: .trailing), lineWidth: 7)
-               )
-               .padding(.top, 100)
-           
-           VStack {
-               ZStack {
-                   Circle()
-                       .stroke(Color.white, lineWidth: 8)
-                       .frame(width: 350, height: 420)
-                       .shadow(color: .white, radius: 8, x: 0, y: 0)
-                       .offset(y: -230)
-                   
-                   Image(planetImage)
-                       .resizable()
-                       .scaledToFit()
-                       .frame(width: index == 0 ? 720 : (index == 1 ? 795 : 740),
-                              height: index == 0 ? 410 : (index == 1 ? 417 : 414))
-                       .scaleEffect(scale)
-                       .offset(x: index == 0 ? 23 : (index == 1 ? 11 : 13),
-                               y: index == 0 ? -231 : (index == 1 ? -233 : -229))
-               }
-               .padding(.top, 120)
-               
-               VStack {
-                   Text(content)
-                       .font(.custom("Montserrat", size: 60))                       .foregroundColor(.white)
-                       .shadow(color: .white, radius: 5, x: 0, y: 0)
-                       .padding(.top, -240)
-                   
-                   Text(description)
-                       .font(.custom("Montserrat", size: 20))                       .foregroundColor(.white)
-                       .padding(.top, -200)
-                   
-                   Button(action: buttonAction) {
-                       Text("IR")
-                           .font(.custom("Montserrat", size: 20))
-                           .foregroundColor(.black)
-                           .padding(.trailing, 40)
-                           .padding(.leading, 40)
-                           .padding()
-                           .background(Color.white)
-                           .cornerRadius(40)
-                   }
-                   
-               }
-           }
-           
-       }
-       .padding(.top, 140)
-   }
+    var content: String
+    var description: String
+    var gradientColors: [Color]
+    var primaryColor:[Color]
+    var planetImage: String
+    @Binding var scale: CGFloat
+    var index: Int
+    var buttonAction: () -> Void
+    var fondoColor: LinearGradient {
+        return LinearGradient(colors: [.black, primaryColor.first ?? .clear], startPoint: .top, endPoint: .bottom)
+    }
+    
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 25)
+                .fill(fondoColor.opacity(0.35))
+                .frame(width: 600, height: 600)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 25)
+                        .stroke(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .leading, endPoint: .trailing), lineWidth: 7)
+                )
+                .padding(.top, 100)
+            
+            VStack {
+                ZStack {
+                    Circle()
+                        .stroke(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .leading, endPoint: .trailing), lineWidth: 7)
+                        .frame(width: 350, height: 420)
+                        .shadow(color: primaryColor.first ?? .clear, radius: 7, x: 0, y: 0)
+                        .offset(y: -230)
+                    
+                    Image(planetImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: index == 0 ? 510 : (index == 1 ? 795 : 745),
+                               height: index == 0 ? 354 : (index == 1 ? 423 : 420))
+                        .scaleEffect(scale)
+                        .offset(x: index == 0 ? 0 : (index == 1 ? 11 : 11),
+                                y: index == 0 ? -231 : (index == 1 ? -233 : -229))
+                }
+                .padding(.top, 120)
+                
+                VStack {
+                    Text(content)
+                        .font(.custom("Montserrat", size: 60))                       .foregroundColor(.white)
+                        .shadow(color: .white, radius: 5, x: 0, y: 0)
+                        .padding(.top, -240)
+                    VStack {
+                        Text(description)
+                            .font(.custom("Montserrat", size: 26))                       .foregroundColor(.white)
+                            .padding(.top, -170).multilineTextAlignment(.center)
+                    }.frame(width: 550)
+                    
+                    Button(action: buttonAction) {
+                        Text("VIAJAR")
+                            .font(.custom("Montserrat", size: 20))
+                            .foregroundColor(.black)
+                            .padding(.trailing, 40)
+                            .padding(.leading, 40)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(40)
+                    }
+                    
+                }
+            }
+            
+        }
+        .padding(.top, 140)
+    }
 }
 
 struct PlanetView_Previews: PreviewProvider {
-   static var previews: some View {
-       PlanetView()
-   }
+    static var previews: some View {
+        PlanetView()
+    }
 }
-
