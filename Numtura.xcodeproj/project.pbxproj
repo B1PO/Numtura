@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6C1B17542B0DAAA300A0A4AB /* PE1DialogIG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1B17532B0DAAA300A0A4AB /* PE1DialogIG.swift */; };
 		6C1B17562B0DAADC00A0A4AB /* SuccessDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1B17552B0DAADC00A0A4AB /* SuccessDialog.swift */; };
-		6C1B17582B0DAE8400A0A4AB /* digitalism.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C1B17572B0DAE8400A0A4AB /* digitalism.ttf */; };
 		6C1B175A2B0DB2BD00A0A4AB /* ArithmeticEx1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1B17592B0DB2BC00A0A4AB /* ArithmeticEx1View.swift */; };
 		6C1B175C2B0DB2CD00A0A4AB /* StarEx1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1B175B2B0DB2CD00A0A4AB /* StarEx1View.swift */; };
 		6C2E20E02AE98E50009E5E5F /* PhysicsEx2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2E20DF2AE98E50009E5E5F /* PhysicsEx2View.swift */; };
@@ -32,6 +31,7 @@
 		6C8731412AE3083F007B081F /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731402AE3083F007B081F /* BackgroundView.swift */; };
 		6C8731432AE30889007B081F /* RocketLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731422AE30889007B081F /* RocketLoadingView.swift */; };
 		6C8731482AE30ACC007B081F /* GeometryEx1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731472AE30ACC007B081F /* GeometryEx1View.swift */; };
+		6C9FEB2B2B0DB6AB003FD501 /* digitalism.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEB2A2B0DB6AB003FD501 /* digitalism.ttf */; };
 		9B0110C22B0AC826009EB318 /* ArimDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0110C12B0AC826009EB318 /* ArimDialogView.swift */; };
 		9B0110C62B0AD23A009EB318 /* menuArim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0110C52B0AD23A009EB318 /* menuArim.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,6 @@
 /* Begin PBXFileReference section */
 		6C1B17532B0DAAA300A0A4AB /* PE1DialogIG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PE1DialogIG.swift; sourceTree = "<group>"; };
 		6C1B17552B0DAADC00A0A4AB /* SuccessDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessDialog.swift; sourceTree = "<group>"; };
-		6C1B17572B0DAE8400A0A4AB /* digitalism.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = digitalism.ttf; path = "/Users/grandybipo/Documents/Numtura-ToUpdate/Font/digitalism.ttf"; sourceTree = "<absolute>"; };
 		6C1B17592B0DB2BC00A0A4AB /* ArithmeticEx1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticEx1View.swift; sourceTree = "<group>"; };
 		6C1B175B2B0DB2CD00A0A4AB /* StarEx1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarEx1View.swift; sourceTree = "<group>"; };
 		6C2E20DF2AE98E50009E5E5F /* PhysicsEx2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsEx2View.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		6C8731402AE3083F007B081F /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		6C8731422AE30889007B081F /* RocketLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLoadingView.swift; sourceTree = "<group>"; };
 		6C8731472AE30ACC007B081F /* GeometryEx1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryEx1View.swift; sourceTree = "<group>"; };
+		6C9FEB2A2B0DB6AB003FD501 /* digitalism.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digitalism.ttf; sourceTree = "<group>"; };
 		9B0110C12B0AC826009EB318 /* ArimDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArimDialogView.swift; sourceTree = "<group>"; };
 		9B0110C52B0AD23A009EB318 /* menuArim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuArim.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,7 +124,7 @@
 		6C49A5C62ADDBDB400F5566E /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				6C1B17572B0DAE8400A0A4AB /* digitalism.ttf */,
+				6C9FEB2A2B0DB6AB003FD501 /* digitalism.ttf */,
 				6C49A5C92ADDF45700F5566E /* Montserrat.ttf */,
 			);
 			path = Font;
@@ -314,7 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C7C7C802AB2909200EEC316 /* Preview Assets.xcassets in Resources */,
-				6C1B17582B0DAE8400A0A4AB /* digitalism.ttf in Resources */,
+				6C9FEB2B2B0DB6AB003FD501 /* digitalism.ttf in Resources */,
 				6C49A5CA2ADDF45700F5566E /* Montserrat.ttf in Resources */,
 				6C7C7C7D2AB2909200EEC316 /* Assets.xcassets in Resources */,
 			);
