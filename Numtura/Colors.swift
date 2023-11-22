@@ -15,5 +15,11 @@ extension Color {
     public static let planet3C2: Color = Color(UIColor(red: 255/255, green: 18/255, blue: 160/255, alpha: 1.0))
     
     //
+    public static let successBtnColor: Color = Color(UIColor(red: 82/255, green: 112/255, blue: 128/255, alpha: 1.0))
+    
+    //Colores del ejercicio 1 de fisica
+    public static let completedColor: Color = Color(UIColor(red: 89/255, green: 223/255, blue: 96/255, alpha: 1.0))
+
+    
     
 }

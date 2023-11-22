@@ -126,7 +126,7 @@ struct cardInfo:View{
                 .cornerRadius(border)
                 .overlay(
                     RoundedRectangle(cornerRadius: border)
-                        .stroke(colorBorder, lineWidth: 4) // Cambia el color y el ancho del borde según tus preferencias
+                        .stroke(colorBorder, lineWidth: 10) // Cambia el color y el ancho del borde según tus preferencias
                 )
             Rectangle()
                 .fill(Color.black.opacity(0.6))

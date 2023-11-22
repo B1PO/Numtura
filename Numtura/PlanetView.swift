@@ -13,7 +13,7 @@ struct PlanetView: View {
     "Encontrarás un mundo donde deberás utilizar tus conocimientos en fisíca para sobrevivir"
     ]
     let cardBorderColors: [[Color]] = [[.planet3C1, .planet3C2],  [.planet2C1, .planet2C2], [.planet1C1, .planet1C2]]
-    let shadowColors:[[Color]]=[[.planet3C2], [.planet2C1], [.planet1C2]]
+    let shadowColors:[[Color]]=[[.planet3C2], [.planet2C1], [.planet1C1]]
     
     var body: some View {
         ZStack {
