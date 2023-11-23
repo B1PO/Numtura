@@ -1,6 +1,8 @@
+
+
 import SwiftUI
 
-class objetos1{
+class objetos2{
     var nameFile:String
     var w:CGFloat
     var h:CGFloat
@@ -13,12 +15,12 @@ class objetos1{
     }
 }
 //Clase de mision
-class misionObject1{
+class misionObject2{
     var textTittle:String
     var coordenadas:String
-    var objeto:objetos1
+    var objeto:objetos2
     var page:String
-    init(textTittle: String, coordenadas: String, objeto: objetos1, page: String) {
+    init(textTittle: String, coordenadas: String, objeto: objetos2, page: String) {
         self.textTittle = textTittle
         self.coordenadas = coordenadas
         self.objeto = objeto
@@ -27,45 +29,45 @@ class misionObject1{
     
 }
 
-
-struct FullPlanetView: View {
-
+struct PlanetViewGeo: View {
+    
     @State private var rotation: Double = 0
     @State private var currentIndex: Int = 0
 
     
     //objetos de las misiones
-    var carreraEsp=objetos1(nameFile: "space-shuttlep", w: 130, h: 130,p:0)
-    var fuerzaMist=objetos1(nameFile: "sputnik_3594176", w: 130, h: 130,p:130)
-    var base = objetos1(nameFile: "base", w: 230, h: 230,p:130)
-    let colorBorder:LinearGradient = LinearGradient(colors: [.planet1C2,.planet1C1, .planet1C2,], startPoint: .top, endPoint: .bottom)
+    var explosion=objetos2(nameFile: "carritoRecol", w: 160, h: 130,p:130)
+    var fuerzaMist=objetos2(nameFile: "cupulaVerde", w: 130, h: 130,p:130)
+    var base = objetos2(nameFile: "base", w: 230, h: 230,p:130)
+    let colorBorder:LinearGradient = LinearGradient(colors: [.planet2C2,.planet2C1, .planet2C2,], startPoint: .top, endPoint: .bottom)
     
     //misiones
-    var m1: misionObject1!
-    var m2: misionObject1!
-    var m3: misionObject1!
-    var misionesList:[misionObject1]!
+    var m1: misionObject2!
+    var m2: misionObject2!
+    var m3: misionObject2!
+    var misionesList:[misionObject2]!
     init() {
-        m1 = misionObject1(textTittle: "CARRERA ESPACIAL", coordenadas: "(51° 30' 30'' N; 0° 7' 32'' O)", objeto: carreraEsp, page: "")
-        m2 = misionObject1(textTittle: "FUERZA MISTERIOSA", coordenadas: "(32° 23' 40'' N; 0° 2' 22'' 1)", objeto: fuerzaMist, page: "")
-        m3 = misionObject1(textTittle: "ESTACIÓN RAMACO", coordenadas: "(25° 22' 52'' N; 2° 5' 25'' 5)", objeto: base, page: "")
+        m1 = misionObject2(textTittle: "LA GRAN EXPLOSION", coordenadas: "(51° 30' 30'' N; 0° 7' 32'' O)", objeto: explosion, page: "")
+        m2 = misionObject2(textTittle: "BRILLA BRILLA", coordenadas: "(32° 23' 40'' N; 0° 2' 22'' 1)", objeto: fuerzaMist, page: "")
+        m3 = misionObject2(textTittle: "ESTACIÓN RAMACO", coordenadas: "(25° 22' 52'' N; 2° 5' 25'' 5)", objeto: base, page: "")
         
         misionesList = [m1, m2, m3]
     }
 
+    
+    
     var body: some View {
-
         ZStack{
             BackgroundView()
             
             ZStack {
                 VStack{
-                    cardInfo1(mision: misionesList [currentIndex]).padding(.bottom, 800)
+                    cardInfo2(mision: misionesList [currentIndex]).padding(.bottom, 800)
                 }
-                placeView1(objeto:misionesList[currentIndex].objeto)
+                placeView2(objeto:misionesList[currentIndex].objeto)
                 VStack{
                     ZStack{
-                            Image("newtPlanet")
+                            Image("geoPlanet")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 1140, height: 1140)
@@ -74,7 +76,7 @@ struct FullPlanetView: View {
                             Circle()
                                 .stroke(colorBorder, lineWidth: 13)
                                 .frame(width: 1080, height: 1100)
-                                .shadow(color: .planet1C2, radius: 16, x: 0, y: 0)
+                                .shadow(color: .planet2C2, radius: 16, x: 0, y: 0)
                         /*mage(estacionDajo.nameFile)
                                 .resizable()
                                 .scaledToFit()
@@ -99,7 +101,6 @@ struct FullPlanetView: View {
                 .padding(.top, 1000)
         }
     }
-    
     private func updateCurrentMission() {
         let totalMissions = misionesList.count
         let missionAngle = 360.0 / Double(totalMissions)
@@ -110,13 +111,12 @@ struct FullPlanetView: View {
         rotation = Double(newIndex) * missionAngle * direction
     }
 }
-
-struct cardInfo1:View{
+struct cardInfo2:View{
    // var coordenadas:String
     //var titulo:String
-    var mision: misionObject1
-    let gradient: LinearGradient = LinearGradient(colors: [.black, .planet1C2,], startPoint: .top, endPoint: .bottom)
-    let colorBorder:LinearGradient = LinearGradient(colors: [.planet1C2,.planet1C1, .planet1C2,], startPoint: .top, endPoint: .bottom)
+    var mision: misionObject2
+    let gradient: LinearGradient = LinearGradient(colors: [.black, .planet2C2,], startPoint: .top, endPoint: .bottom)
+    let colorBorder:LinearGradient = LinearGradient(colors: [.planet2C2,.planet2C1, .planet2C2,], startPoint: .top, endPoint: .bottom)
     let border:CGFloat=60.0
     func holaMundo(){
         print("Hola mundo")
@@ -170,8 +170,8 @@ struct cardInfo1:View{
         }
     }
 }
-struct placeView1:View{
-    let objeto:objetos1
+struct placeView2:View{
+    let objeto:objetos2
     var body: some View{
         ZStack{
             Image(objeto.nameFile).resizable().frame(width: objeto.w, height: objeto.h).padding(.top,objeto.p)
@@ -179,9 +179,8 @@ struct placeView1:View{
     }
 }
 
-struct FullPlanetView_Previews: PreviewProvider {
+struct PlanetViewGeo_Previews: PreviewProvider {
     static var previews: some View {
-        FullPlanetView()
+        PlanetViewGeo()
     }
 }
-
