@@ -5,6 +5,7 @@ struct PlanetView: View {
     @State private var scale: CGFloat = 1.0
     @State var timer: Timer?
     @State var nav: Bool = false
+    @State var indexPrime: Int=0
     
     let planetImages = ["planet01", "planet02", "planet03"]
     let descriptionPlanet:[String]=[
@@ -14,7 +15,7 @@ struct PlanetView: View {
     ]
     let cardBorderColors: [[Color]] = [[.planet3C1, .planet3C2],  [.planet2C1, .planet2C2], [.planet1C1, .planet1C2]]
     let shadowColors:[[Color]]=[[.planet3C2], [.planet2C1], [.planet1C1]]
-    
+    let planetsView:[AnyView]=[AnyView(menuArim()),AnyView(PlanetViewGeo()),AnyView(FullPlanetView()) ]
     var body: some View {
         ZStack {
             
@@ -79,16 +80,8 @@ struct PlanetView: View {
             .animation(.spring())
             
             if nav {
-                RocketLoadingView()
-                    .padding(.top, -70)
-                    .transition(.move(edge: .bottom))
-                    .animation(.easeOut(duration: 2))
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
-                            self.nav.toggle()
-                        }
-                    }
-                
+                //*Se manda a llamar al arreglo en base al indexPrime
+                planetsView[indexPrime]
             }
         }
     }
@@ -96,27 +89,12 @@ struct PlanetView: View {
     
     
     func performAction(index: Int) {
-        // Aquí, puedes añadir las acciones de cada tarjeta
         print("Acción para la tarjeta \(index)")
-        switch index {
-            case 0:
-                print("Redirigiendo a otra vista para la tarjeta 0")
-                // Aquí puedes añadir el código para redirigir a otra vista
-                
-                self.nav.toggle()
-                
-            case 1:
-                print("Acción de impresión para la tarjeta 1")
-                self.nav.toggle()
-                
-            case 2:
-                print("Acción para la tarjeta 2")
-                self.nav.toggle()
-                
-            default:
-                break
-        }
-    }
+        print("Redirigiendo a otra vista para la tarjeta \(index)")
+        self.nav.toggle()
+        self.indexPrime=index
+    }//Fin de funcion
+    
 }
 
 

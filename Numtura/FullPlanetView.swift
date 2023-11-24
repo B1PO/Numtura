@@ -32,11 +32,11 @@ struct FullPlanetView: View {
 
     @State private var rotation: Double = 0
     @State private var currentIndex: Int = 0
-
+    @State var nav: Bool = false
     
     //objetos de las misiones
-    var carreraEsp=objetos1(nameFile: "space-shuttlep", w: 130, h: 130,p:0)
-    var fuerzaMist=objetos1(nameFile: "sputnik_3594176", w: 130, h: 130,p:130)
+    var carreraEsp=objetos1(nameFile: "space-shuttlep", w: 130, h: 130,p:117)
+    var fuerzaMist=objetos1(nameFile: "sputnik_3594176", w: 130, h: 130,p:117)
     var base = objetos1(nameFile: "base", w: 230, h: 230,p:130)
     let colorBorder:LinearGradient = LinearGradient(colors: [.planet1C2,.planet1C1, .planet1C2,], startPoint: .top, endPoint: .bottom)
     
@@ -60,7 +60,7 @@ struct FullPlanetView: View {
             
             ZStack {
                 VStack{
-                    cardInfo1(mision: misionesList [currentIndex]).padding(.bottom, 800)
+                    cardInfo1(buttonAction: goBakc,mision: misionesList [currentIndex]).padding(.bottom, 800)
                 }
                 placeView1(objeto:misionesList[currentIndex].objeto)
                 VStack{
@@ -93,10 +93,12 @@ struct FullPlanetView: View {
                                 }
                         )
                 }.padding(.top,500)
+            }.offset(x: nav ? UIScreen.main.bounds.width*0 : UIScreen.main.bounds.width*0  , y: nav ? UIScreen.main.bounds.height * -1 : UIScreen.main.bounds.height * 0)
+                .animation(.spring())
+            //Fin de ZStack
+            if nav {
+                PlanetView()
             }
-            
-            Test()
-                .padding(.top, 1000)
         }
     }
     
@@ -109,14 +111,18 @@ struct FullPlanetView: View {
         currentIndex = newIndex
         rotation = Double(newIndex) * missionAngle * direction
     }
+    func goBakc(){
+        self.nav.toggle()
+    }
 }
 
 struct cardInfo1:View{
    // var coordenadas:String
     //var titulo:String
+    var buttonAction: () -> Void
     var mision: misionObject1
     let gradient: LinearGradient = LinearGradient(colors: [.black, .planet1C2,], startPoint: .top, endPoint: .bottom)
-    let colorBorder:LinearGradient = LinearGradient(colors: [.planet1C2,.planet1C1, .planet1C2,], startPoint: .top, endPoint: .bottom)
+    let colorBorder:LinearGradient = LinearGradient(colors: [.planet1C1, .planet1C2], startPoint: .topLeading, endPoint: .bottomTrailing)
     let border:CGFloat=60.0
     func holaMundo(){
         print("Hola mundo")
@@ -154,16 +160,31 @@ struct cardInfo1:View{
                     .fill(Color.white)
                     .frame(width: 300, height: 2)
                 
-                Button(action: holaMundo, label: {
-                    Text("INICIAR")
-                        .font(.custom("Montserrat", size: 20))
-                        .foregroundColor(.black)
-                        .padding(.trailing, 40)
-                        .padding(.leading, 40)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(40)
-                }).padding(.top, 30)
+                HStack {
+                    Button {
+                        buttonAction()
+                    } label: {
+                        Text("MENÚ")
+                            .font(.custom("Montserrat", size: 20))
+                            .foregroundColor(.black)
+                            .padding(.trailing, 40)
+                            .padding(.leading, 40)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(40)
+                    } //Fin de boton
+                    Button(action: holaMundo, label: {
+                        Text("INICIAR")
+                            .font(.custom("Montserrat", size: 20))
+                            .foregroundColor(.black)
+                            .padding(.trailing, 40)
+                            .padding(.leading, 40)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(40)
+                    })//Fin de Boton
+                }.padding(.top,30)
+                //Fin de HStack
             }
             
                 

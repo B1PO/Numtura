@@ -30,7 +30,7 @@ struct menuArim: View {
     
     @State private var rotation: Double = 0
     @State private var currentIndex: Int = 0
-
+    @State var nav: Bool = false
     
     //objetos de las misiones
     var estacionDajo=objetos(nameFile: "arimObj1", w: 130, h: 130,p:0)
@@ -57,7 +57,7 @@ struct menuArim: View {
             
             ZStack {
                 VStack{
-                    cardInfo(mision: misionesList [currentIndex]).padding(.bottom, 800)
+                    cardInfo(buttonAction: goBakc,mision: misionesList [currentIndex]).padding(.bottom, 800)
                 }
                 placeView(objeto:misionesList[currentIndex].objeto)
                 VStack{
@@ -90,10 +90,13 @@ struct menuArim: View {
                                 }
                         )
                 }.padding(.top,500)
+            }.offset(x: nav ? UIScreen.main.bounds.width*0 : UIScreen.main.bounds.width*0  , y: nav ? UIScreen.main.bounds.height * -1 : UIScreen.main.bounds.height * 0)
+                .animation(.spring())
+            //Fin de ZStack
+            if nav {
+                PlanetView()
             }
-            
-            Test()
-                .padding(.top, 1000)
+
         }
     }
     // Función para actualizar el índice actual de la misión en función de la rotación
@@ -106,13 +109,17 @@ struct menuArim: View {
         currentIndex = newIndex
         rotation = Double(newIndex) * missionAngle * direction
     }
+    func goBakc(){
+        self.nav.toggle()
+    }
 }
 struct cardInfo:View{
    // var coordenadas:String
     //var titulo:String
+    var buttonAction: () -> Void
     var mision: misionObject
     let gradient: LinearGradient = LinearGradient(colors: [.black, .planet3C2,], startPoint: .top, endPoint: .bottom)
-    let colorBorder:LinearGradient = LinearGradient(colors: [.planet3C2,.planet3C1, .planet3C2,], startPoint: .top, endPoint: .bottom)
+    let colorBorder:LinearGradient = LinearGradient(colors: [.planet3C2,.planet3C1], startPoint: .topLeading, endPoint: .bottomTrailing)
     let border:CGFloat=60.0
     func holaMundo(){
         print("Hola mundo")
@@ -150,17 +157,36 @@ struct cardInfo:View{
                     .fill(Color.white)
                     .frame(width: 300, height: 2)
                 
-                Button(action: holaMundo, label: {
-                    Text("INICIAR")
-                        .font(.custom("Montserrat", size: 20))
-                        .foregroundColor(.black)
-                        .padding(.trailing, 40)
-                        .padding(.leading, 40)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(40)
-                }).padding(.top, 30)
+                
+                HStack {
+                    Button {
+                        buttonAction()
+                    } label: {
+                        Text("MENÚ")
+                            .font(.custom("Montserrat", size: 20))
+                            .foregroundColor(.black)
+                            .padding(.trailing, 40)
+                            .padding(.leading, 40)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(40)
+                    } //Fin de boton
+                    Button(action: holaMundo, label: {
+                        Text("INICIAR")
+                            .font(.custom("Montserrat", size: 20))
+                            .foregroundColor(.black)
+                            .padding(.trailing, 40)
+                            .padding(.leading, 40)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(40)
+                    })//Fin de Boton
+                }.padding(.top,30)
+                //Fin de HStack
+                
             }
+            
+           
             
                 
         }
