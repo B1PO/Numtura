@@ -145,11 +145,11 @@ struct GameView: View {
                     
                     
                     if isShowingSuccessDialog {
-                        SuccessDialog(onContinue: {
+                       // SuccessDialog(onContinue: {
                             
-                        })
-                        .padding(.top, -500)
-                        .padding(.leading, -400)
+                        //})
+                        //.padding(.top, -500)
+                        //.padding(.leading, -400)
 
 
                     } else {

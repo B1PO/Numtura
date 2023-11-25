@@ -1,16 +1,15 @@
 import SwiftUI
 
 struct SuccessDialog: View {
-   
-    var onContinue: () -> Void
-
+    @Binding var nav: Bool
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 50)
                 .fill(Color.white)
                 .frame(width: 700, height: 100)
                 .shadow(radius: 10)
-
+            
             HStack {
                 HStack(spacing: 8) {
                     Image("trophy-star")
@@ -26,9 +25,9 @@ struct SuccessDialog: View {
                         .bold()
                 }
                 .padding(.leading, 20)
-
+                
                 Spacer()
-
+                
                 // Este RoundedRectangle actúa como botón
                 RoundedRectangle(cornerRadius: 40)
                     .fill(Color.successBtnColor)
@@ -40,8 +39,8 @@ struct SuccessDialog: View {
                             .foregroundColor(.white)
                     )
                     .onTapGesture {
-                        onContinue()
-                    }
+                        // Llamamos al cierre con un valor booleano (true)
+                        nav = true                    }
                     .padding(.trailing, 20)
             }
         }
@@ -51,9 +50,13 @@ struct SuccessDialog: View {
 
 struct SuccessDialog_Previews: PreviewProvider {
     static var previews: some View {
-        SuccessDialog(onContinue: { print("Seguir explorando") })
+        let nav = Binding<Bool>(
+            get: { return false },
+            set: { _ in }
+        )
+        
+        return SuccessDialog(nav: nav)
             .previewLayout(.sizeThatFits)
             .padding()
     }
 }
-

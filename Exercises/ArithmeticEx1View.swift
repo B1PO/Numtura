@@ -1,8 +1,14 @@
 import SwiftUI
 
+class SharedData: ObservableObject {
+    @Published var resultValue: Bool = false
+}
+
 struct ArithmeticEx1View: View {
     @State private var stars: [Starrr] = []
     @State private var completed = false
+    @State var nav: Bool = false
+    
 
     let primeNumbers = [
          2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
@@ -14,14 +20,11 @@ struct ArithmeticEx1View: View {
      ]
     var body: some View {
         ZStack {
-           
             VStack {
                 
                 if completed {
-                    SuccessDialog(onContinue: {
-                        
-                    })
-                        .zIndex(1)
+                    SuccessDialog(nav: $nav)
+                    .zIndex(1)
                 } else {
                     AE1DialogIG()
                         .padding(.bottom, -80)
@@ -71,7 +74,12 @@ struct ArithmeticEx1View: View {
             }
             .onAppear {
                 startGame()
-        }
+            }.offset(x: nav ? UIScreen.main.bounds.width*0 : UIScreen.main.bounds.width*0  , y: nav ? UIScreen.main.bounds.height * -1 : UIScreen.main.bounds.height * 0)
+                .animation(.spring())
+            //Fin de ZStack
+            if nav {
+                menuArim()
+            }
         }
     }
 

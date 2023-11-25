@@ -4,6 +4,7 @@ struct GeometryEx1View: View {
     
     @State private var dialogOpacity = 1.0
     @State private var completed = false
+    @State var nav: Bool = false
     
     @State var opacidad1: Double = 1
     @State var opacidad2: Double = 1
@@ -437,13 +438,17 @@ struct GeometryEx1View: View {
 
                     HStack{
                         if completed {
-                            SuccessDialog(onContinue: {
-                            })
+                            SuccessDialog(nav: $nav)
                         }
                     }
                 }
                 
             
+        }.offset(x: nav ? UIScreen.main.bounds.width*0 : UIScreen.main.bounds.width*0  , y: nav ? UIScreen.main.bounds.height * -1 : UIScreen.main.bounds.height * 0)
+            .animation(.spring())
+        //Fin de ZStack
+        if nav {
+            PlanetViewGeo()
         }
     }
     

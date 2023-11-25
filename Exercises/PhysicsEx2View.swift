@@ -28,9 +28,9 @@ struct PhysicsEx2View: View {
                         if !completed {
                                             PE1DialogIG()
                         } else {
-                            SuccessDialog(onContinue: {
+                            //SuccessDialog(onContinue: {
                                 
-                            })
+                            //})
                         }
                          
                             ZStack {

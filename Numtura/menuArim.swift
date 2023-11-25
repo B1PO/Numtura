@@ -31,7 +31,9 @@ struct menuArim: View {
     @State private var rotation: Double = 0
     @State private var currentIndex: Int = 0
     @State var nav: Bool = false
-    
+    @State var nav2: Bool = false
+    @State var indexPrime: Int=0
+    let planetsView:[AnyView]=[AnyView(StarEx1View()),AnyView(FiguresEx1View()),AnyView(PhysicsEx2View()) ]
     //objetos de las misiones
     var estacionDajo=objetos(nameFile: "arimObj1", w: 130, h: 130,p:0)
     var observatorio=objetos(nameFile: "observatory_3594152", w: 130, h: 130,p:130)
@@ -57,7 +59,10 @@ struct menuArim: View {
             
             ZStack {
                 VStack{
-                    cardInfo(buttonAction: goBakc,mision: misionesList [currentIndex]).padding(.bottom, 800)
+                    cardInfo(
+                        buttonAction: goBakc,
+                        buttonMision: {performAction(index: currentIndex)},
+                        mision: misionesList [currentIndex]).padding(.bottom, 800)
                 }
                 placeView(objeto:misionesList[currentIndex].objeto)
                 VStack{
@@ -96,6 +101,9 @@ struct menuArim: View {
             if nav {
                 PlanetView()
             }
+            if nav2 {
+                planetsView[indexPrime]
+            }
 
         }
     }
@@ -111,12 +119,21 @@ struct menuArim: View {
     }
     func goBakc(){
         self.nav.toggle()
-    }
+    }//Fin de funcion
+    
+    func performAction(index: Int) {
+        print("Acción para la tarjeta \(index)")
+        print("Redirigiendo a otra vista para la tarjeta \(index)")
+        self.nav2.toggle()
+        self.indexPrime=index
+    }//Fin de funcion
+    
 }
 struct cardInfo:View{
    // var coordenadas:String
     //var titulo:String
     var buttonAction: () -> Void
+    var buttonMision: () -> Void
     var mision: misionObject
     let gradient: LinearGradient = LinearGradient(colors: [.black, .planet3C2,], startPoint: .top, endPoint: .bottom)
     let colorBorder:LinearGradient = LinearGradient(colors: [.planet3C2,.planet3C1], startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -171,7 +188,7 @@ struct cardInfo:View{
                             .background(Color.white)
                             .cornerRadius(40)
                     } //Fin de boton
-                    Button(action: holaMundo, label: {
+                    Button(action: buttonMision, label: {
                         Text("INICIAR")
                             .font(.custom("Montserrat", size: 20))
                             .foregroundColor(.black)
