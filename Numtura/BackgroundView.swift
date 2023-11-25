@@ -35,8 +35,8 @@ struct BackgroundView: View {
             Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
                 for star in smallStars + mediumStars + largeStars {
                     offsets[star.id] = CGSize(
-                        width: CGFloat.random(in: -10...20),
-                        height: CGFloat.random(in: -10...20)
+                        width: CGFloat.random(in: -10...30),
+                        height: CGFloat.random(in: -10...30)
                     )
                 }
             }
@@ -53,7 +53,7 @@ struct BackgroundView: View {
             Circle()
                 .frame(width: star.initialSize, height: star.initialSize)
                 .foregroundColor(.white)
-                .opacity(0.8)
+                .opacity(0.4)
                 .position(x: star.x, y: star.y)
                 .scaleEffect(star.scale)
                 .offset(offsets[star.id] ?? CGSize.zero)

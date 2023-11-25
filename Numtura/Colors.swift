@@ -16,9 +16,21 @@ extension Color {
     
     //
     public static let successBtnColor: Color = Color(UIColor(red: 82/255, green: 112/255, blue: 128/255, alpha: 1.0))
-    
+
+    //FISICA
     //Colores del ejercicio 1 de fisica
     public static let completedColor: Color = Color(UIColor(red: 89/255, green: 223/255, blue: 96/255, alpha: 1.0))
+    
+    
+    //ARITMETICA
+    //Colores del ejercicio de las estrellas
+    public static let starFont: Color = Color(UIColor(red: 166/255, green: 133/255, blue: 0/255, alpha: 1.0))
+    public static let starsColor: Color = Color(UIColor(red: 255/255, green: 216/255, blue: 59/255, alpha: 1.0))
+    
+    
+    //GEOMETRÍA
+    //Colores del ejercicio de las figuras
+    public static let figuresColor: Color = Color(UIColor(red: 166/255, green: 217/255, blue: 144/255, alpha: 1.0))
 
     
     

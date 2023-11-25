@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GeometryEx1: View {
+struct GeometryEx1View: View {
     
     @State private var dialogOpacity = 1.0
     @State private var completed = false
@@ -22,8 +22,8 @@ struct GeometryEx1: View {
     @State var pulsadof9: Bool = false
     @State var pulsadof10: Bool = false
     
-    @State var colorCorrect : Color = Color.mint
-    @State var defaultColor : Color = Color.white
+    @State var colorCorrect : Color = Color.figuresColor
+    @State var defaultColor : Color = Color.figuresColor
 
     
     @State var resp1: Bool = false
@@ -36,10 +36,9 @@ struct GeometryEx1: View {
     
     var body: some View {
         ZStack{
-            BackgroundView()
                 VStack{
 
-                    PE1DialogIGG()
+                    GE1DialogIG()
                         .padding(.top, -50)
                         .opacity(opaCongrats)
 
@@ -81,7 +80,7 @@ struct GeometryEx1: View {
                                         pulsadof9 = false
                                         pulsadof10 = false
                                     }
-                                    defaultColor = Color.white
+                                    defaultColor = Color.figuresColor
                                 }
                                 
                             }
@@ -121,7 +120,7 @@ struct GeometryEx1: View {
                                         pulsadof9 = false
                                         pulsadof10 = false
                                     }
-                                    defaultColor = Color.white
+                                    defaultColor = Color.figuresColor
                                 }
                                 
                             }
@@ -163,7 +162,7 @@ struct GeometryEx1: View {
                                         pulsadof9 = false
                                         pulsadof10 = false
                                     }
-                                    defaultColor = Color.white
+                                    defaultColor = Color.figuresColor
                                 }
                             }
                     }
@@ -173,7 +172,7 @@ struct GeometryEx1: View {
                             .resizable()
                             .frame(width: 440, height: 260)
                             .padding(.trailing,20)
-                            .shadow(color: .white, radius: pulsadof4 ? 10 : 0
+                            .shadow(color: .figuresColor, radius: pulsadof4 ? 10 : 0
                             )
                             .onTapGesture {
                                 pulsadof4 = true
@@ -235,7 +234,7 @@ struct GeometryEx1: View {
                                         pulsadof9 = false
                                         pulsadof10 = false
                                     }
-                                    defaultColor = Color.white
+                                    defaultColor = Color.figuresColor
                                 }
                             }
                         
@@ -277,7 +276,7 @@ struct GeometryEx1: View {
                                             pulsadof9 = false
                                             pulsadof10 = false
                                         }
-                                        defaultColor = Color.white
+                                        defaultColor = Color.figuresColor
                                     }
                                 }
                             
@@ -285,7 +284,7 @@ struct GeometryEx1: View {
                                 .resizable()
                                 .frame(width: 400, height: 220)
                                 .padding(.leading,-70)
-                                .shadow(color: .white, radius: pulsadof7 ? 10 : 0
+                                .shadow(color: .figuresColor, radius: pulsadof7 ? 10 : 0
                                 )
                                 .onTapGesture {
                                     pulsadof7 = true
@@ -349,7 +348,7 @@ struct GeometryEx1: View {
                                         pulsadof9 = false
                                         pulsadof10 = false
                                     }
-                                    defaultColor = Color.white
+                                    defaultColor = Color.figuresColor
                                 }
                             }
                         
@@ -388,7 +387,7 @@ struct GeometryEx1: View {
                                         pulsadof9 = false
                                         pulsadof10 = false
                                     }
-                                    defaultColor = Color.white
+                                    defaultColor = Color.figuresColor
                                 }
                             }
                         
@@ -429,7 +428,7 @@ struct GeometryEx1: View {
                                         pulsadof9 = false
                                         pulsadof10 = false
                                     }
-                                    defaultColor = Color.white
+                                    defaultColor = Color.figuresColor
                                 }
                             }
                         
@@ -465,6 +464,7 @@ struct GeometryEx1: View {
 }
 
 #Preview{
-    GeometryEx1()
+    GeometryEx1View()
 }
+
 

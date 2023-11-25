@@ -1,117 +1,84 @@
 import SwiftUI
 
 struct ArithmeticEx1View: View {
-    @State private var score = 0
-    @State private var timeRemaining = 30
-    @State private var isGameActive = false
     @State private var stars: [Starrr] = []
+    @State private var completed = false
 
     let primeNumbers = [
-        2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
-        31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
-        73, 79, 83, 89, 97, 101, 103, 107, 109, 113,
-        127, 131, 137, 139, 149, 151, 157, 163, 167, 173,
-        179, 181, 191, 193, 197, 199, 211, 223, 227, 229,
-        233, 239, 241
-    ]
-
-    @State private var isShowingMenu = false // Variable para controlar la visualización del menú
-
+         2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
+         31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
+         73, 79, 83, 89, 97, 101, 103, 107, 109, 113,
+         127, 131, 137, 139, 149, 151, 157, 163, 167, 173,
+         179, 181, 191, 193, 197, 199, 211, 223, 227, 229,
+         233, 239, 241
+     ]
     var body: some View {
         ZStack {
-            BackgroundView()
-                .zIndex(0)
-
+           
             VStack {
-                Text("Puntuación: \(score)")
-                    .font(.system(size: 40))
-                    .foregroundColor(.white)
+                
+                if completed {
+                    SuccessDialog(onContinue: {
+                        
+                    })
+                        .zIndex(1)
+                } else {
+                    AE1DialogIG()
+                        .padding(.bottom, -80)
+                        .zIndex(1)
+                }
 
-                if isGameActive {
-                    Text("Tiempo Restante: \(timeRemaining)")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
-                            if timeRemaining > 0 {
-                                timeRemaining -= 1
-                                if stars.filter({ $0.isPrime && !$0.isFadingOut }).isEmpty {
-                                    endGame()
-                                }
-                            } else {
-                                endGame()
-                            }
-                        }
-
-                    LazyVGrid(columns: Array(repeating: GridItem(), count: 5),spacing: 90) {
+                VStack {
+                    LazyVGrid(columns: Array(repeating: GridItem(), count: 5), spacing: 90) {
                         ForEach(stars.indices, id: \.self) { index in
                             Button(action: {
+                                guard !completed else { return }
                                 if stars[index].isPrime {
-                                    if !stars[index].isFadingOut {
-                                        score += 1
-                                        withAnimation {
-                                            stars[index].isFadingOut = true
-                                            stars[index].isGrayedOut = true
-                                        }
-                                        if stars.filter({ $0.isPrime && !$0.isFadingOut }).isEmpty {
-                                            endGame()
-                                        }
+                                    withAnimation {
+                                        stars[index].isFadingOut = true
+                                        stars[index].isGrayedOut = true
+                                        checkCompletion()
                                     }
                                 } else {
-                                   
+                                    withAnimation {
+                                        resetStars()
+                                    }
                                 }
                             }) {
                                 ZStack {
                                     Image(systemName: "star.fill")
                                         .font(.system(size: 97.75))
-                                        .foregroundColor(stars[index].isGrayedOut ? .gray : .yellow)
+                                        .foregroundColor(stars[index].isGrayedOut ? .gray : .starsColor)
+                                        .shadow(color: stars[index].isGrayedOut ? .gray : .starsColor, radius: 5, x: 0.0, y: 0.0)
+
                                     Text("\(stars[index].primeNumber)")
-                                        .font(.title)
-                                        .foregroundColor(.primary) // Cambia el color del texto a negro
+                                        .font(.custom("Montserrat", size: 33))
+                                        .bold()
+                                        .foregroundColor(stars[index].isGrayedOut ? .gray : .starFont)
+                                        .padding(.top, 1)
                                 }
                                 .scaleEffect(stars[index].isFadingOut ? 0.5 : 1.0)
                                 .opacity(stars[index].isFadingOut ? 0.5 : 1.0)
                                 .animation(.easeInOut(duration: 0.5))
                             }
-                            .frame(width: 75, height: 75) // Ajusta el tamaño de las estrellas
-                        }
+                            .frame(width: 75, height: 75)
+                            .disabled(completed)                         }
                     }
                     .frame(width: 800, height: 1000)
                     .drawingGroup()
-
-                    // Botón para volver al menú
-    
-                    
-                } else {
-                    
-                    Text("").padding().padding()
-                    Button("Comenzar Juego") {
-                        score = 0
-                        timeRemaining = 30
-                        isGameActive = true
-                        generateStars()
-                    }
-                    .font(.system(size: 40))
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background(Color.secondary)
-                    
-                    Text("").padding().padding()
-                    
-                    Button("Volver al Menú") {
-                                       isShowingMenu.toggle()
-                                   }
-                    .font(.system(size: 40))
-                                   .padding()
-                                   .foregroundColor(Color.white)
-                                   .background(Color.secondary)
-                                   .fullScreenCover(isPresented: $isShowingMenu, content: {
-                                       StarEx1View()
-                                   })
+                    .zIndex(0)
                 }
             }
+            .onAppear {
+                startGame()
+        }
         }
     }
 
+    func startGame() {
+        generateStars()
+    }
+    
     func generateStars() {
         stars.removeAll()
         var allStars = [Starrr]()
@@ -122,18 +89,15 @@ struct ArithmeticEx1View: View {
             var primeNumber: Int
 
             if isNextPrime {
-                // Si todavía hay números primos disponibles en la lista, selecciona uno.
                 if primeIndex < primeNumbers.count {
                     primeNumber = primeNumbers[primeIndex]
                     primeIndex += 1
                 } else {
-                    // Si no quedan números primos disponibles, cambia a números pares aleatorios (excluyendo el 2).
                     repeat {
                         primeNumber = Int.random(in: 4...100)
                     } while primeNumber % 2 != 0
                 }
             } else {
-                // Siempre selecciona números pares (excluyendo el 2) cuando no sea un número primo.
                 repeat {
                     primeNumber = Int.random(in: 4...100)
                 } while primeNumber % 2 != 0
@@ -145,14 +109,24 @@ struct ArithmeticEx1View: View {
             let newStar = Starrr(isPrime: isNextPrime, primeNumber: primeNumber, x: x, y: y)
             allStars.append(newStar)
             isNextPrime.toggle()
+            
         }
 
         stars = allStars.shuffled()
     }
 
-    func endGame() {
-        isGameActive = false
-        
+
+    func checkCompletion() {
+        if stars.filter({ $0.isPrime && !$0.isFadingOut }).isEmpty {
+            completed = true
+        }
+    }
+
+    func resetStars() {
+        for index in stars.indices {
+            stars[index].isFadingOut = false
+            stars[index].isGrayedOut = false
+        }
     }
 }
 
@@ -171,3 +145,4 @@ struct Starrr: Identifiable {
     var isFadingOut: Bool = false
     var isGrayedOut: Bool = false
 }
+

@@ -21,6 +21,15 @@
 		6C49A5CB2ADDF45700F5566E /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C49A5C92ADDF45700F5566E /* Montserrat.ttf */; };
 		6C49A5CC2ADDF45700F5566E /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C49A5C92ADDF45700F5566E /* Montserrat.ttf */; };
 		6C49A5CF2AE1B06500F5566E /* FullPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C49A5CE2AE1B06500F5566E /* FullPlanetView.swift */; };
+		6C4ECE482B11A81500405FB6 /* GE1Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4ECE472B11A81500405FB6 /* GE1Dialog.swift */; };
+		6C4ECE4A2B11A81F00405FB6 /* GE1DialogIG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4ECE492B11A81F00405FB6 /* GE1DialogIG.swift */; };
+		6C4ECE4C2B11A8A000405FB6 /* FiguresEx1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4ECE4B2B11A8A000405FB6 /* FiguresEx1View.swift */; };
+		6C4ECE4E2B11A8F000405FB6 /* GE2DialogIG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4ECE4D2B11A8F000405FB6 /* GE2DialogIG.swift */; };
+		6C4ECE502B11A90100405FB6 /* GE2Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4ECE4F2B11A90100405FB6 /* GE2Dialog.swift */; };
+		6C4ECE522B11A92800405FB6 /* AE1Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4ECE512B11A92800405FB6 /* AE1Dialog.swift */; };
+		6C4ECE542B11A93200405FB6 /* AE1DialogIG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4ECE532B11A93200405FB6 /* AE1DialogIG.swift */; };
+		6C4ECE562B11ABF000405FB6 /* GeometryEx2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4ECE552B11ABF000405FB6 /* GeometryEx2View.swift */; };
+		6C4ECE582B11AD1100405FB6 /* TelescopeEx2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4ECE572B11AD1100405FB6 /* TelescopeEx2View.swift */; };
 		6C7C7C792AB2909100EEC316 /* NumturaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C782AB2909100EEC316 /* NumturaApp.swift */; };
 		6C7C7C7B2AB2909100EEC316 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C7C7A2AB2909100EEC316 /* ContentView.swift */; };
 		6C7C7C7D2AB2909200EEC316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7C7C7C2AB2909200EEC316 /* Assets.xcassets */; };
@@ -32,10 +41,7 @@
 		6C8731432AE30889007B081F /* RocketLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731422AE30889007B081F /* RocketLoadingView.swift */; };
 		6C8731482AE30ACC007B081F /* GeometryEx1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8731472AE30ACC007B081F /* GeometryEx1View.swift */; };
 		6C9FEB2B2B0DB6AB003FD501 /* digitalism.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEB2A2B0DB6AB003FD501 /* digitalism.ttf */; };
-		86FE0BF42B0ED59B00148EEB /* PE1DialogFiguras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FE0BF32B0ED59B00148EEB /* PE1DialogFiguras.swift */; };
-		86FE0BF62B0EEF0E00148EEB /* PE1DialogIGG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FE0BF52B0EEF0E00148EEB /* PE1DialogIGG.swift */; };
 		86FE0BF82B0F146E00148EEB /* PlanetViewGeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FE0BF72B0F146E00148EEB /* PlanetViewGeo.swift */; };
-		9B0110C22B0AC826009EB318 /* ArimDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0110C12B0AC826009EB318 /* ArimDialogView.swift */; };
 		9B0110C62B0AD23A009EB318 /* menuArim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0110C52B0AD23A009EB318 /* menuArim.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +76,15 @@
 		6C49A5C92ADDF45700F5566E /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		6C49A5CD2ADDF63900F5566E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C49A5CE2AE1B06500F5566E /* FullPlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPlanetView.swift; sourceTree = "<group>"; };
+		6C4ECE472B11A81500405FB6 /* GE1Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GE1Dialog.swift; sourceTree = "<group>"; };
+		6C4ECE492B11A81F00405FB6 /* GE1DialogIG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GE1DialogIG.swift; sourceTree = "<group>"; };
+		6C4ECE4B2B11A8A000405FB6 /* FiguresEx1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiguresEx1View.swift; sourceTree = "<group>"; };
+		6C4ECE4D2B11A8F000405FB6 /* GE2DialogIG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GE2DialogIG.swift; sourceTree = "<group>"; };
+		6C4ECE4F2B11A90100405FB6 /* GE2Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GE2Dialog.swift; sourceTree = "<group>"; };
+		6C4ECE512B11A92800405FB6 /* AE1Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AE1Dialog.swift; sourceTree = "<group>"; };
+		6C4ECE532B11A93200405FB6 /* AE1DialogIG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AE1DialogIG.swift; sourceTree = "<group>"; };
+		6C4ECE552B11ABF000405FB6 /* GeometryEx2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryEx2View.swift; sourceTree = "<group>"; };
+		6C4ECE572B11AD1100405FB6 /* TelescopeEx2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelescopeEx2View.swift; sourceTree = "<group>"; };
 		6C7C7C752AB2909100EEC316 /* Numtura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numtura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7C7C782AB2909100EEC316 /* NumturaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumturaApp.swift; sourceTree = "<group>"; };
 		6C7C7C7A2AB2909100EEC316 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,10 +99,7 @@
 		6C8731422AE30889007B081F /* RocketLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLoadingView.swift; sourceTree = "<group>"; };
 		6C8731472AE30ACC007B081F /* GeometryEx1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryEx1View.swift; sourceTree = "<group>"; };
 		6C9FEB2A2B0DB6AB003FD501 /* digitalism.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digitalism.ttf; sourceTree = "<group>"; };
-		86FE0BF32B0ED59B00148EEB /* PE1DialogFiguras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PE1DialogFiguras.swift; sourceTree = "<group>"; };
-		86FE0BF52B0EEF0E00148EEB /* PE1DialogIGG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PE1DialogIGG.swift; sourceTree = "<group>"; };
 		86FE0BF72B0F146E00148EEB /* PlanetViewGeo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewGeo.swift; sourceTree = "<group>"; };
-		9B0110C12B0AC826009EB318 /* ArimDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArimDialogView.swift; sourceTree = "<group>"; };
 		9B0110C52B0AD23A009EB318 /* menuArim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuArim.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,12 +131,10 @@
 		6C2E20E12AE9947B009E5E5F /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
-				6C2E20E22AE99523009E5E5F /* PE1Dialog.swift */,
-				9B0110C12B0AC826009EB318 /* ArimDialogView.swift */,
-				6C1B17532B0DAAA300A0A4AB /* PE1DialogIG.swift */,
+				6C4ECE462B11A76D00405FB6 /* GDialogs */,
+				6C4ECE452B11A76300405FB6 /* ADialogs */,
+				6C4ECE442B11A75900405FB6 /* PDialogs */,
 				6C1B17552B0DAADC00A0A4AB /* SuccessDialog.swift */,
-				86FE0BF32B0ED59B00148EEB /* PE1DialogFiguras.swift */,
-				86FE0BF52B0EEF0E00148EEB /* PE1DialogIGG.swift */,
 			);
 			path = Dialog;
 			sourceTree = "<group>";
@@ -136,6 +146,35 @@
 				6C49A5C92ADDF45700F5566E /* Montserrat.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		6C4ECE442B11A75900405FB6 /* PDialogs */ = {
+			isa = PBXGroup;
+			children = (
+				6C2E20E22AE99523009E5E5F /* PE1Dialog.swift */,
+				6C1B17532B0DAAA300A0A4AB /* PE1DialogIG.swift */,
+			);
+			path = PDialogs;
+			sourceTree = "<group>";
+		};
+		6C4ECE452B11A76300405FB6 /* ADialogs */ = {
+			isa = PBXGroup;
+			children = (
+				6C4ECE512B11A92800405FB6 /* AE1Dialog.swift */,
+				6C4ECE532B11A93200405FB6 /* AE1DialogIG.swift */,
+			);
+			path = ADialogs;
+			sourceTree = "<group>";
+		};
+		6C4ECE462B11A76D00405FB6 /* GDialogs */ = {
+			isa = PBXGroup;
+			children = (
+				6C4ECE472B11A81500405FB6 /* GE1Dialog.swift */,
+				6C4ECE492B11A81F00405FB6 /* GE1DialogIG.swift */,
+				6C4ECE4D2B11A8F000405FB6 /* GE2DialogIG.swift */,
+				6C4ECE4F2B11A90100405FB6 /* GE2Dialog.swift */,
+			);
+			path = GDialogs;
 			sourceTree = "<group>";
 		};
 		6C7C7C6C2AB2909100EEC316 = {
@@ -214,6 +253,9 @@
 				6C2E20DF2AE98E50009E5E5F /* PhysicsEx2View.swift */,
 				6C1B17592B0DB2BC00A0A4AB /* ArithmeticEx1View.swift */,
 				6C1B175B2B0DB2CD00A0A4AB /* StarEx1View.swift */,
+				6C4ECE4B2B11A8A000405FB6 /* FiguresEx1View.swift */,
+				6C4ECE552B11ABF000405FB6 /* GeometryEx2View.swift */,
+				6C4ECE572B11AD1100405FB6 /* TelescopeEx2View.swift */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -354,25 +396,31 @@
 			files = (
 				6C8731432AE30889007B081F /* RocketLoadingView.swift in Sources */,
 				6C49A5C82ADDC29300F5566E /* MainScreenView.swift in Sources */,
+				6C4ECE4E2B11A8F000405FB6 /* GE2DialogIG.swift in Sources */,
 				6C7C7C7B2AB2909100EEC316 /* ContentView.swift in Sources */,
 				6C1B175A2B0DB2BD00A0A4AB /* ArithmeticEx1View.swift in Sources */,
 				6C49A5C12AD0FA1D00F5566E /* Colors.swift in Sources */,
 				6C8731412AE3083F007B081F /* BackgroundView.swift in Sources */,
 				6C49A5C32AD0FA2F00F5566E /* PlanetView.swift in Sources */,
 				6C2E20E02AE98E50009E5E5F /* PhysicsEx2View.swift in Sources */,
+				6C4ECE522B11A92800405FB6 /* AE1Dialog.swift in Sources */,
 				6C1B17562B0DAADC00A0A4AB /* SuccessDialog.swift in Sources */,
-				9B0110C22B0AC826009EB318 /* ArimDialogView.swift in Sources */,
-				86FE0BF42B0ED59B00148EEB /* PE1DialogFiguras.swift in Sources */,
+				6C4ECE542B11A93200405FB6 /* AE1DialogIG.swift in Sources */,
+				6C4ECE502B11A90100405FB6 /* GE2Dialog.swift in Sources */,
 				6C49A5C52AD0FA8D00F5566E /* test.swift in Sources */,
+				6C4ECE562B11ABF000405FB6 /* GeometryEx2View.swift in Sources */,
 				9B0110C62B0AD23A009EB318 /* menuArim.swift in Sources */,
 				6C2E20E32AE99523009E5E5F /* PE1Dialog.swift in Sources */,
 				6C7C7C792AB2909100EEC316 /* NumturaApp.swift in Sources */,
 				6C1B17542B0DAAA300A0A4AB /* PE1DialogIG.swift in Sources */,
 				6C1B175C2B0DB2CD00A0A4AB /* StarEx1View.swift in Sources */,
 				6C8731482AE30ACC007B081F /* GeometryEx1View.swift in Sources */,
-				86FE0BF62B0EEF0E00148EEB /* PE1DialogIGG.swift in Sources */,
 				86FE0BF82B0F146E00148EEB /* PlanetViewGeo.swift in Sources */,
 				6C49A5CF2AE1B06500F5566E /* FullPlanetView.swift in Sources */,
+				6C4ECE482B11A81500405FB6 /* GE1Dialog.swift in Sources */,
+				6C4ECE4C2B11A8A000405FB6 /* FiguresEx1View.swift in Sources */,
+				6C4ECE582B11AD1100405FB6 /* TelescopeEx2View.swift in Sources */,
+				6C4ECE4A2B11A81F00405FB6 /* GE1DialogIG.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
