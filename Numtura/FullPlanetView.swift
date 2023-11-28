@@ -38,9 +38,9 @@ struct FullPlanetView: View {
     let planetsView:[AnyView]=[AnyView(PhysicsEx2View()),AnyView(PhysicsEx2View()),AnyView(PhysicsEx2View()) ]
     
     //objetos de las misiones
-    var carreraEsp=objetos1(nameFile: "space-shuttlep", w: 130, h: 130,p:117)
-    var fuerzaMist=objetos1(nameFile: "sputnik_3594176", w: 130, h: 130,p:117)
-    var base = objetos1(nameFile: "base", w: 230, h: 230,p:130)
+    var carreraEsp=objetos1(nameFile: "ufo2", w: 160, h: 160,p:164)
+    var fuerzaMist=objetos1(nameFile: "nave-p", w: 160, h: 160,p:137)
+    var base = objetos1(nameFile: "carro", w: 170, h: 170,p:175)
     let colorBorder:LinearGradient = LinearGradient(colors: [.planet1C2,.planet1C1, .planet1C2,], startPoint: .top, endPoint: .bottom)
     //Sonidos
     private let soundPlayer = SoundActive()
@@ -51,9 +51,9 @@ struct FullPlanetView: View {
     var m3: misionObject1!
     var misionesList:[misionObject1]!
     init() {
-        m1 = misionObject1(textTittle: "CARRERA ESPACIAL", coordenadas: "(51° 30' 30'' N; 0° 7' 32'' O)", objeto: carreraEsp, page: "")
-        m2 = misionObject1(textTittle: "FUERZA MISTERIOSA", coordenadas: "(32° 23' 40'' N; 0° 2' 22'' 1)", objeto: fuerzaMist, page: "")
-        m3 = misionObject1(textTittle: "ESTACIÓN RAMACO", coordenadas: "(25° 22' 52'' N; 2° 5' 25'' 5)", objeto: base, page: "")
+        m1 = misionObject1(textTittle: "FUERZA MISTERIOSA", coordenadas: "(51° 30' 30'' N; 0° 7' 32'' O)", objeto: carreraEsp, page: "")
+        m2 = misionObject1(textTittle: "CARRERA ESPACIAL", coordenadas: "(32° 23' 40'' N; 0° 2' 22'' 1)", objeto: fuerzaMist, page: "")
+        m3 = misionObject1(textTittle: "VIAJE ROCOSO", coordenadas: "(25° 22' 52'' N; 2° 5' 25'' 5)", objeto: base, page: "")
         
         misionesList = [m1, m2, m3]
     }

@@ -41,9 +41,9 @@ struct PlanetViewGeo: View {
 
     
     //objetos de las misiones
-    var explosion=objetos2(nameFile: "carritoRecol", w: 160, h: 130,p:130)
-    var fuerzaMist=objetos2(nameFile: "cupulaVerde", w: 130, h: 130,p:130)
-    var base = objetos2(nameFile: "base", w: 230, h: 230,p:130)
+    var explosion=objetos2(nameFile: "cupulaVerde", w: 160, h: 165,p:143)
+    var fuerzaMist=objetos2(nameFile: "Charge", w: 110, h: 110,p:133)
+    var base = objetos2(nameFile: "sat", w: 140, h: 140,p:10)
     let colorBorder:LinearGradient = LinearGradient(colors: [.planet2C2,.planet2C1], startPoint: .topLeading, endPoint: .bottomTrailing)
     //Sonidos
     private let soundPlayer = SoundActive()
@@ -54,9 +54,9 @@ struct PlanetViewGeo: View {
     var m3: misionObject2!
     var misionesList:[misionObject2]!
     init() {
-        m1 = misionObject2(textTittle: "LA GRAN EXPLOSION", coordenadas: "(51° 30' 30'' N; 0° 7' 32'' O)", objeto: explosion, page: "")
-        m2 = misionObject2(textTittle: "BRILLA BRILLA", coordenadas: "(32° 23' 40'' N; 0° 2' 22'' 1)", objeto: fuerzaMist, page: "")
-        m3 = misionObject2(textTittle: "ESTACIÓN RAMACO", coordenadas: "(25° 22' 52'' N; 2° 5' 25'' 5)", objeto: base, page: "")
+        m1 = misionObject2(textTittle: "BASURA ESPACIAL", coordenadas: "(51° 30' 30'' N; 0° 7' 32'' O)", objeto: explosion, page: "")
+        m2 = misionObject2(textTittle: "EL COLECCIONISTA", coordenadas: "(32° 23' 40'' N; 0° 2' 22'' 1)", objeto: fuerzaMist, page: "")
+        m3 = misionObject2(textTittle: "SEÑALES ANGULARES", coordenadas: "(25° 22' 52'' N; 2° 5' 25'' 5)", objeto: base, page: "")
         
         misionesList = [m1, m2, m3]
     }

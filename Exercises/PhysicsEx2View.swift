@@ -8,6 +8,10 @@ struct PhysicsEx2View: View {
     @State private var isUFOAnimating = false
     @State private var asteroidOffset: CGFloat = 0
     @State var nav: Bool = false
+    
+    private let soundPlayer = SoundActive()
+    let soundWin:SoundModel = .init(name: "soundWin")
+    let soundMenu:SoundModel = .init(name: "menuSound")
 
 
     let gradientColors: [Color] = [.planet1C1]
@@ -30,6 +34,9 @@ struct PhysicsEx2View: View {
                                             PE1DialogIG()
                         } else {
                             SuccessDialog(nav: $nav)
+                            
+                            
+                            
                         }
                          
                             ZStack {
@@ -61,6 +68,8 @@ struct PhysicsEx2View: View {
                                     if self.appliedForce < 110 {
                                         self.appliedForce += 10
                                         if self.appliedForce >= 110 {
+                                            soundPlayer.play(withURL: soundWin.getURL())
+
                                             self.completed = true
                                         }
                                     }
@@ -109,6 +118,11 @@ struct PhysicsEx2View: View {
                     }
                     .padding(.top, 900)
                 }
+                if nav {
+                FullPlanetView() .onAppear{
+                        self.soundPlayer.play(withURL: soundMenu   .getURL())
+                    }
+                }
             }
 
             if dialogOpacity > 0 {
@@ -117,6 +131,9 @@ struct PhysicsEx2View: View {
         }
         .onAppear {
             withAnimation(self.floatAnimation) {
+            }
+            
+            if completed == true {
             }
         }
         .onChange(of: completed) { newValue in

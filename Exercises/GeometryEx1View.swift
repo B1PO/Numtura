@@ -38,6 +38,7 @@ struct GeometryEx1View: View {
     //Sonidos
     private let soundPlayer = SoundActive()
     let soundWin:SoundModel = .init(name: "soundWin")
+    let soundMenu:SoundModel = .init(name: "menuSound")
     
     var body: some View {
         ZStack{
@@ -454,7 +455,11 @@ struct GeometryEx1View: View {
             .animation(.spring())
         //Fin de ZStack
         if nav {
+            
             PlanetViewGeo()
+                .onAppear{
+                    self.soundPlayer.play(withURL: soundMenu   .getURL())
+                }
         }
     }
     

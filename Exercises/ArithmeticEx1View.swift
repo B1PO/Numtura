@@ -11,6 +11,7 @@ struct ArithmeticEx1View: View {
     //Sonidos
     private let soundPlayer = SoundActive()
     let soundWin:SoundModel = .init(name: "soundWin")
+    let soundMenu:SoundModel = .init(name: "menuSound")
     
     
 
@@ -84,7 +85,9 @@ struct ArithmeticEx1View: View {
                 .animation(.spring())
             //Fin de ZStack
             if nav {
-                menuArim()
+                menuArim() .onAppear{
+                    self.soundPlayer.play(withURL: soundMenu   .getURL())
+                }
             }
         }
     }

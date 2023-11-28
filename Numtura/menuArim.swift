@@ -36,8 +36,8 @@ struct menuArim: View {
     @State var indexPrime: Int=0
     let planetsView:[AnyView]=[AnyView(StarEx1View()),AnyView(FiguresEx1View()),AnyView(PhysicsEx2View()) ]
     //objetos de las misiones
-    var estacionDajo=objetos(nameFile: "arimObj1", w: 130, h: 130,p:0)
-    var observatorio=objetos(nameFile: "observatory_3594152", w: 130, h: 130,p:130)
+    var estacionDajo=objetos(nameFile: "star-rain", w: 130, h: 130,p:10)
+    var observatorio=objetos(nameFile: "arimObj1", w: 130, h: 130,p:0)
     var base = objetos(nameFile: "base", w: 230, h: 230,p:130)
     let colorBorder:LinearGradient = LinearGradient(colors: [.planet3C2,.planet3C1, .planet3C2,], startPoint: .top, endPoint: .bottom)
     
@@ -51,9 +51,9 @@ struct menuArim: View {
     var m3: misionObject!
     var misionesList:[misionObject]!
     init() {
-        m1 = misionObject(textTittle: "ESTACIÓN DAJO", coordenadas: "(51° 30' 30'' N; 0° 7' 32'' O)", objeto: estacionDajo, page: "")
-        m2 = misionObject(textTittle: "TELESCOPIO FERA", coordenadas: "(32° 23' 40'' N; 0° 2' 22'' 1)", objeto: observatorio, page: "")
-        m3 = misionObject(textTittle: "ESTACIÓN RAMACO", coordenadas: "(25° 22' 52'' N; 2° 5' 25'' 5)", objeto: base, page: "")
+        m1 = misionObject(textTittle: "ESTRELLAS PERDIDAS", coordenadas: "(51° 30' 30'' N; 0° 7' 32'' O)", objeto: estacionDajo, page: "")
+        m2 = misionObject(textTittle: "ESTACIÓN DAJO", coordenadas: "(32° 23' 40'' N; 0° 2' 22'' 1)", objeto: observatorio, page: "")
+        m3 = misionObject(textTittle: "MAQUINA NUMÉRICA", coordenadas: "(25° 22' 52'' N; 2° 5' 25'' 5)", objeto: base, page: "")
         
         misionesList = [m1, m2, m3]
     }

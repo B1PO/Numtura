@@ -2,6 +2,8 @@ import SwiftUI
 
 struct SuccessDialog: View {
     @Binding var nav: Bool
+
+    
     
     var body: some View {
         ZStack {
@@ -33,14 +35,21 @@ struct SuccessDialog: View {
                     .fill(Color.successBtnColor)
                     .frame(width: 300, height: 75)
                     .overlay(
-                        Text("Seguir explorando")
-                            .font(.custom("Montserrat", size: 20))
-                            .bold()
+                        HStack {
+                            Text("Seguir explorando")
+                                .font(.custom("Montserrat", size: 20))
+                                .bold()
                             .foregroundColor(.white)
+                            Image("arrow-success")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .padding(.trailing, -40)
+                        }
                     )
                     .onTapGesture {
                         // Llamamos al cierre con un valor booleano (true)
-                        nav = true                    }
+                        nav = true
+                    }
                     .padding(.trailing, 20)
             }
         }
