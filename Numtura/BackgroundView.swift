@@ -45,6 +45,9 @@ struct BackgroundView: View {
     @StateObject var soundPlayer = SoundPlayer()
     let sound: SoundModel = .init(name: "bS")
     
+    @State private var wave2YOffset: CGFloat = 0
+    @State private var wave4YOffset: CGFloat = 0
+    
     var body: some View {
         
         ZStack{
@@ -54,8 +57,22 @@ struct BackgroundView: View {
             VStack {
                 Image("wave2")
                     .resizable()
+                    .offset(y: wave2YOffset)
+                    .padding(.top, -50)
+                    .animation(
+                        Animation.easeInOut(duration: 2).repeatForever(autoreverses: true),
+                        value: wave2YOffset
+                    )
                 Image("wave4")
                     .resizable()
+                    .offset(y: wave4YOffset)
+                    .padding(.bottom, -50)
+                    .padding(.leading, 40)
+
+                    .animation(
+                        Animation.easeInOut(duration: 2).repeatForever(autoreverses: true),
+                        value: wave4YOffset
+                    )
             }
             .frame(width: 1000, height: 1200, alignment: .center)
             
@@ -77,6 +94,10 @@ struct BackgroundView: View {
                         height: CGFloat.random(in: -10...30)
                     )
                 }
+            }
+            withAnimation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
+                wave2YOffset = 20
+                wave4YOffset = -20
             }
         }
         .onDisappear() {
@@ -116,4 +137,3 @@ struct BackgroundView: View {
 #Preview {
     BackgroundView()
 }
-
