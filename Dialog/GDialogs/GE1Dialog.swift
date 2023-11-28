@@ -7,8 +7,8 @@ struct GE1DialogExpandable: View {
     @Binding var dialogOpacity: Double
     
     let dialogs: [Text] = [
-        Text("¡Oh no! Tu viaje por planeta está siendo difícil por la gran cantidad de ") + Text("basura espacial").bold().foregroundColor(.figuresColor),
-        Text("Despeja tu camino eliminando la basura que encuentres con forma parecida"),
+        Text("¡Oh no! Tu viaje por planeta está siendo difícil por la gran cantidad de ").foregroundColor(.black) + Text("basura espacial").bold().foregroundColor(.figuresColor),
+        Text("Despeja tu camino eliminando la basura que encuentres con forma parecida").foregroundColor(.black),
         Text(". . .").bold().foregroundColor(.figuresColor)
         
     ]

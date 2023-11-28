@@ -43,6 +43,14 @@
 		6C9FEB2B2B0DB6AB003FD501 /* digitalism.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEB2A2B0DB6AB003FD501 /* digitalism.ttf */; };
 		86FE0BF82B0F146E00148EEB /* PlanetViewGeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FE0BF72B0F146E00148EEB /* PlanetViewGeo.swift */; };
 		9B0110C62B0AD23A009EB318 /* menuArim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0110C52B0AD23A009EB318 /* menuArim.swift */; };
+		9B131E402B150457006AEFA6 /* menuSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B131E3F2B150457006AEFA6 /* menuSound.mp3 */; };
+		9B131E422B150700006AEFA6 /* backSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B131E412B1506FF006AEFA6 /* backSound.mp3 */; };
+		9B131E442B150E71006AEFA6 /* iniciarSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B131E432B150E71006AEFA6 /* iniciarSound.mp3 */; };
+		9B131E462B15AE37006AEFA6 /* soundWin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B131E452B15AE37006AEFA6 /* soundWin.mp3 */; };
+		9BEACC542B13BB380038831C /* backGroundSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BEACC532B13BB380038831C /* backGroundSound.mp3 */; };
+		9BEACC562B141E150038831C /* bS.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BEACC552B141E150038831C /* bS.mp3 */; };
+		9BEACC592B1473B70038831C /* nA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BEACC582B1473B70038831C /* nA.mp3 */; };
+		9BEACC5B2B1479630038831C /* desplazarSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BEACC5A2B1479630038831C /* desplazarSound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +109,14 @@
 		6C9FEB2A2B0DB6AB003FD501 /* digitalism.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digitalism.ttf; sourceTree = "<group>"; };
 		86FE0BF72B0F146E00148EEB /* PlanetViewGeo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewGeo.swift; sourceTree = "<group>"; };
 		9B0110C52B0AD23A009EB318 /* menuArim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuArim.swift; sourceTree = "<group>"; };
+		9B131E3F2B150457006AEFA6 /* menuSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = menuSound.mp3; path = ../../Downloads/menuSound.mp3; sourceTree = "<group>"; };
+		9B131E412B1506FF006AEFA6 /* backSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backSound.mp3; path = ../../Downloads/backSound.mp3; sourceTree = "<group>"; };
+		9B131E432B150E71006AEFA6 /* iniciarSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = iniciarSound.mp3; path = ../../Downloads/iniciarSound.mp3; sourceTree = "<group>"; };
+		9B131E452B15AE37006AEFA6 /* soundWin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = soundWin.mp3; path = ../../Downloads/soundWin.mp3; sourceTree = "<group>"; };
+		9BEACC532B13BB380038831C /* backGroundSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backGroundSound.mp3; sourceTree = "<group>"; };
+		9BEACC552B141E150038831C /* bS.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bS.mp3; path = ../../Downloads/bS.mp3; sourceTree = "<group>"; };
+		9BEACC582B1473B70038831C /* nA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nA.mp3; path = ../../Downloads/nA.mp3; sourceTree = "<group>"; };
+		9BEACC5A2B1479630038831C /* desplazarSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = desplazarSound.mp3; path = ../../Downloads/desplazarSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +232,7 @@
 				9B0110C52B0AD23A009EB318 /* menuArim.swift */,
 				6C49A5C72ADDC29300F5566E /* MainScreenView.swift */,
 				6C7C7C7C2AB2909200EEC316 /* Assets.xcassets */,
+				9BEACC522B13BB380038831C /* Sounds */,
 				6C7C7C7E2AB2909200EEC316 /* Preview Content */,
 			);
 			path = Numtura;
@@ -258,6 +275,22 @@
 				6C4ECE572B11AD1100405FB6 /* TelescopeEx2View.swift */,
 			);
 			path = Exercises;
+			sourceTree = "<group>";
+		};
+		9BEACC522B13BB380038831C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9B131E412B1506FF006AEFA6 /* backSound.mp3 */,
+				9B131E452B15AE37006AEFA6 /* soundWin.mp3 */,
+				9B131E3F2B150457006AEFA6 /* menuSound.mp3 */,
+				9B131E432B150E71006AEFA6 /* iniciarSound.mp3 */,
+				9BEACC5A2B1479630038831C /* desplazarSound.mp3 */,
+				9BEACC582B1473B70038831C /* nA.mp3 */,
+				9BEACC552B141E150038831C /* bS.mp3 */,
+				9BEACC532B13BB380038831C /* backGroundSound.mp3 */,
+			);
+			name = Sounds;
+			path = ../../../../../../Documents/Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,9 +398,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C7C7C802AB2909200EEC316 /* Preview Assets.xcassets in Resources */,
+				9BEACC562B141E150038831C /* bS.mp3 in Resources */,
+				9B131E402B150457006AEFA6 /* menuSound.mp3 in Resources */,
 				6C9FEB2B2B0DB6AB003FD501 /* digitalism.ttf in Resources */,
+				9B131E442B150E71006AEFA6 /* iniciarSound.mp3 in Resources */,
+				9B131E462B15AE37006AEFA6 /* soundWin.mp3 in Resources */,
 				6C49A5CA2ADDF45700F5566E /* Montserrat.ttf in Resources */,
+				9B131E422B150700006AEFA6 /* backSound.mp3 in Resources */,
+				9BEACC542B13BB380038831C /* backGroundSound.mp3 in Resources */,
+				9BEACC592B1473B70038831C /* nA.mp3 in Resources */,
 				6C7C7C7D2AB2909200EEC316 /* Assets.xcassets in Resources */,
+				9BEACC5B2B1479630038831C /* desplazarSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +620,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Numtura/Preview Content\"";
-				DEVELOPMENT_TEAM = ZKS2NRWRZN;
+				DEVELOPMENT_TEAM = T7F35K4QPB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Numtura/Info.plist;
@@ -587,7 +628,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,9 +639,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.Numtura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -609,7 +656,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Numtura/Preview Content\"";
-				DEVELOPMENT_TEAM = ZKS2NRWRZN;
+				DEVELOPMENT_TEAM = T7F35K4QPB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Numtura/Info.plist;
@@ -617,7 +664,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,9 +675,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.Numtura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

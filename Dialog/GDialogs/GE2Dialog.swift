@@ -7,8 +7,8 @@ struct GE2DialogExpandable: View {
     @Binding var dialogOpacity: Double
     
     let dialogs: [Text] = [
-        Text("Es hora de echarle un ojo al espacio y ") + Text("encontrar las constelaciones.").bold().foregroundColor(.figuresColor),
-        Text("Determina la distancia entre estas utilizando") + Text(" el teorema de Pitagoras.").bold().foregroundColor(.figuresColor),
+        Text("Es hora de echarle un ojo al espacio y ").foregroundColor(.black) + Text("encontrar las constelaciones.").bold().foregroundColor(.figuresColor),
+        Text("Determina la distancia entre estas utilizando").foregroundColor(.black) + Text(" el teorema de Pitagoras.").bold().foregroundColor(.figuresColor),
         Text(". . .").bold().foregroundColor(.figuresColor)
         
     ]

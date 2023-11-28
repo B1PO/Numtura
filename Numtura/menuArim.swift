@@ -1,4 +1,5 @@
 import SwiftUI
+import AVKit
 //Clase para los puntos de la misiones
 class objetos{
     var nameFile:String
@@ -40,6 +41,10 @@ struct menuArim: View {
     var base = objetos(nameFile: "base", w: 230, h: 230,p:130)
     let colorBorder:LinearGradient = LinearGradient(colors: [.planet3C2,.planet3C1, .planet3C2,], startPoint: .top, endPoint: .bottom)
     
+    //Sonidos
+    private let soundPlayer = SoundActive()
+    let sound:SoundModel = .init(name: "desplazarSound")
+
     //misiones
     var m1: misionObject!
     var m2: misionObject!
@@ -93,6 +98,9 @@ struct menuArim: View {
                                         updateCurrentMission()
                                     }
                                 }
+                                .onChanged{ _ in
+                                    self.soundPlayer.play(withURL: sound.getURL())
+                                }
                         )
                 }.padding(.top,500)
             }.offset(x: nav ? UIScreen.main.bounds.width*0 : UIScreen.main.bounds.width*0  , y: nav ? UIScreen.main.bounds.height * -1 : UIScreen.main.bounds.height * 0)
@@ -109,6 +117,7 @@ struct menuArim: View {
     }
     // Función para actualizar el índice actual de la misión en función de la rotación
     private func updateCurrentMission() {
+      
         let totalMissions = misionesList.count
         let missionAngle = 360.0 / Double(totalMissions)
         let direction: Double = rotation > 0 ? 1 : -1
@@ -122,6 +131,7 @@ struct menuArim: View {
     }//Fin de funcion
     
     func performAction(index: Int) {
+        
         print("Acción para la tarjeta \(index)")
         print("Redirigiendo a otra vista para la tarjeta \(index)")
         self.nav2.toggle()
@@ -138,6 +148,9 @@ struct cardInfo:View{
     let gradient: LinearGradient = LinearGradient(colors: [.black, .planet3C2,], startPoint: .top, endPoint: .bottom)
     let colorBorder:LinearGradient = LinearGradient(colors: [.planet3C2,.planet3C1], startPoint: .topLeading, endPoint: .bottomTrailing)
     let border:CGFloat=60.0
+    private let soundPlayer = SoundActive()
+    let soundBack:SoundModel = .init(name: "backSound")
+    let soundStart:SoundModel = .init(name: "iniciarSound")
     func holaMundo(){
         print("Hola mundo")
     }
@@ -177,6 +190,7 @@ struct cardInfo:View{
                 
                 HStack {
                     Button {
+                        self.soundPlayer.play(withURL: soundBack.getURL())
                         buttonAction()
                     } label: {
                         Text("MENÚ")
@@ -188,7 +202,10 @@ struct cardInfo:View{
                             .background(Color.white)
                             .cornerRadius(40)
                     } //Fin de boton
-                    Button(action: buttonMision, label: {
+                    Button(action: {
+                        buttonMision()
+                        self.soundPlayer.play(withURL: soundStart.getURL())
+                    }, label: {
                         Text("INICIAR")
                             .font(.custom("Montserrat", size: 20))
                             .foregroundColor(.black)

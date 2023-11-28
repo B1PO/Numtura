@@ -6,8 +6,8 @@ struct AE1DialogIGExpandable: View {
     @State private var isValidated = false
 
     let dialogs: [Text] = [
-        Text("Presiona todas las estrellas que contengan") + Text (" números primos.").foregroundColor(.planet3C2).bold(),
-        Text("Los números primos") .foregroundColor(.planet3C2).bold() + Text(" son números enteros mayores a uno que solamente se pueden dividir entre uno y ellos mismos.")
+        Text("Presiona todas las estrellas que contengan").foregroundColor(.black) + Text (" números primos.").foregroundColor(.planet3C2).bold(),
+        Text("Los números primos") .foregroundColor(.planet3C2).bold() + Text(" son números enteros mayores a uno que solamente se pueden dividir entre uno y ellos mismos.").foregroundColor(.black)
     ]
 
     var body: some View {

@@ -1,66 +1,110 @@
 import SwiftUI
 import Combine
-//Esto no va en el content
+import AVKit
 struct ContentView: View {
     @State var showPlanetView: Bool = false
+    @State var nav: Bool = false
+    private let soundPlayer = SoundActive()
+    let sound:SoundModel = .init(name: "nA")
+    
     var body: some View {
         ZStack {
-            BackgroundView()
-            
-            VStack {
-                Image("cohetenum")
-                    .resizable()
-                    .frame(width: 490, height: 270, alignment: .center)
-                // Texto con efecto de glow
-                Text("N U M T U R A")
-                    .font(.custom("Montserrat", size: 60))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
-                    .shadow(color: .white, radius: 10, x: 0.0, y: 0.0)
+            BackgroundView().edgesIgnoringSafeArea(.all)
+            VStack{
+                LogoView().opacity(nav ? 0 : 1)
+                    .scaleEffect(nav ? 0.8 : 1)
+                    .animation(.easeInOut(duration: 0.5))
                 
-                // Línea debajo del texto
-                Rectangle()
-                    .frame(height: 5)
-                    .foregroundColor(.white)
-                    .shadow(color: .white, radius: 10, x: 0.0, y: 0.0)
-                    .padding([.leading, .trailing], 290)
-                Text("Hora de iniciar tu aventura")
-                    .font(.custom("Montserrat", size: 32))
-                    .foregroundColor(Color.white)
-                    
-    
-                // Botón "Explorar" con efecto de glow
-                ZStack{
-                    Rectangle()
-                        .frame(width: 400, height: 70)
-                        .cornerRadius(20)
-                        .foregroundColor(Color(UIColor(red: 0.38, green: 0.38, blue: 0.40, alpha: 1.00)))
-                        .opacity(0.2)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color(UIColor(red: 0.60, green: 0.60, blue: 0.62, alpha: 1.00)), lineWidth: 5)
-                                .opacity(0.2)
-                        }
-                    
-                    Text("EXPLORAR")
-                        .font(.custom("Montserrat", size: 30))
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .shadow(color: .white, radius: 10, x: 0.0, y: 0.0)
-                }.onTapGesture {
-                    //Codigo a ejecutar simulando un Button
-                    showPlanetView.toggle()
+                RoundedRectangle(cornerRadius: 5)
+                    .frame(width: 400, height: 3)
+                    .foregroundColor(.clear)
+                    .background(
+                        RoundedRectangle(cornerRadius: 5)
+                            .foregroundColor(Color.white)
+                            .frame(width: 400, height: 3)
+                    ).padding(.bottom, 100)
+                Button(action: {
+                    nav.toggle()
+                    self.soundPlayer.play(withURL: sound.getURL())
+                }) {
+                    NeonText(text: "INICIAR", size: 43)
                 }
+                .buttonStyle(NeonButtonStyle())
                 
-                .fullScreenCover(isPresented: $showPlanetView, content: {
-                    PlanetView()
-                })
+                
+            }.offset(x: nav ? UIScreen.main.bounds.width*0 : UIScreen.main.bounds.width*0  , y: nav ? UIScreen.main.bounds.height * -1 : UIScreen.main.bounds.height * 0)
+                .animation(.spring())
+                .transition(.move(edge: .bottom))
+            //Fin de ZStack
+            if nav {
+                PlanetView().transition(.move(edge: .bottom))
             }
+            //Fin de Vstack
+        }//Fin ZStack 1
+    }//Fin body
+}//Fin de ContentView
+
+struct LogoView: View {
+    var body: some View {
+        ZStack {
+            VStack{
+                Image("cohetenum").resizable().frame(width: 550, height: 300).padding(.bottom,10)
+                NeonText(text: "NUMTURA", size: 90)
+                    .padding(.bottom,30)
+                
+            }
+        }//Fin ZStack 1
+    }//Fin body
+}//Fin de ContentView
+
+//Estructura para trxto neon
+struct NeonText: View {
+    var text: String
+    var size: CGFloat
+    
+    var body: some View {
+        ZStack {
+            Text(text)
+                .font(.custom("Montserrat", size: size))
+                .foregroundColor(.white)
+                .bold()
+                .overlay(
+                    Text(text)
+                        .font(.custom("Montserrat", size: size))
+                        .foregroundColor(.white)
+                        .bold()
+                        .blur(radius: 9) // Ajusta el radio para cambiar la intensidad del resplandor
+                        .opacity(0.9) // intensidad del resplandor
+                )
         }
     }
-    
 }
 
+//Estructura del boton
+struct NeonButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .padding(.horizontal,70)
+            .padding(.vertical,30)
+            .background(
+                RoundedRectangle(cornerRadius: 45)
+                    .stroke(Color.white, lineWidth: 2)
+                    .background(
+                        RoundedRectangle(cornerRadius: 45)
+                            .foregroundColor(Color.clear)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 45)
+                                    .stroke(Color.white, lineWidth: 2)
+                                    .blur(radius: 7)
+                                    .opacity(0.9)
+                            )
+                    )
+            )
+    }
+}
+
+
+//Estructura de las estrellas
 struct Star: Identifiable {
     let id = UUID()
     var x: CGFloat

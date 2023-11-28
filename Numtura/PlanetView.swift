@@ -1,4 +1,17 @@
 import SwiftUI
+import AVKit
+import Combine
+
+//Clase de sonido
+class SoundActive {
+    var player: AVAudioPlayer?
+    
+    func play(withURL url: URL) {
+        player = try! AVAudioPlayer(contentsOf: url)
+        player?.prepareToPlay()
+        player?.play()
+    }
+}
 
 struct PlanetView: View {
     @State private var selectedIndex = 0
@@ -6,7 +19,10 @@ struct PlanetView: View {
     @State var timer: Timer?
     @State var nav: Bool = false
     @State var indexPrime: Int=0
+    private let soundPlayer = SoundActive()
+    let sound:SoundModel = .init(name: "desplazarSound")
     
+  
     let planetImages = ["planet01", "planet02", "planet03"]
     let descriptionPlanet:[String]=[
     "Este planeta esta lleno de aventuras donde la aritmética será la clave",
@@ -31,6 +47,7 @@ struct PlanetView: View {
             
             VStack {
                 
+                
                 TabView(selection: $selectedIndex) {
                     ForEach(0..<3) { index in
                         CardView(content: ["ARIM", "GEOS", "NEWT"][index],
@@ -44,11 +61,28 @@ struct PlanetView: View {
                             performAction(index: index)
                         })
                         .rotationEffect(.degrees(selectedIndex == index ? 0 : -10))
+                       
                         .tag(index)
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .gesture(
+                    DragGesture()  .onChanged {gesture in
+                        // Esto se ejecutará mientras se realiza el gesto
+                        let gestureTranslation = gesture.translation.width
+                        if gestureTranslation > 5 {
+                            // Se hizo un gesto hacia la derecha
+                            
+                            self.soundPlayer.play(withURL: sound.getURL())
+                        } else if gestureTranslation < -5 {
+                            // Se hizo un gesto hacia la izquierda
+                            self.soundPlayer.play(withURL: sound.getURL())
+                        }
+                    }
+                )
                 .animation(.easeInOut(duration: 0.5))
+                
+               
                 
                 HStack {
                     ForEach(0..<3) { index in
@@ -58,6 +92,7 @@ struct PlanetView: View {
                                 .frame(width: selectedIndex == index ? 44 : 22, height: selectedIndex == index ? 44 : 22)
                                 .foregroundColor(.white)
                                 .onTapGesture {
+                                    self.soundPlayer.play(withURL: sound.getURL())
                                     selectedIndex = index
                                 }
                             
@@ -78,10 +113,12 @@ struct PlanetView: View {
             }
             .offset(x: nav ? UIScreen.main.bounds.width*0 : UIScreen.main.bounds.width*0  , y: nav ? UIScreen.main.bounds.height * -1 : UIScreen.main.bounds.height * 0)
             .animation(.spring())
+            .transition(.move(edge: .bottom))
+          
             
             if nav {
                 //*Se manda a llamar al arreglo en base al indexPrime
-                planetsView[indexPrime]
+                planetsView[indexPrime].transition(.move(edge: .bottom))
             }
         }
     }
@@ -93,6 +130,7 @@ struct PlanetView: View {
         print("Redirigiendo a otra vista para la tarjeta \(index)")
         self.nav.toggle()
         self.indexPrime=index
+        
     }//Fin de funcion
     
 }
@@ -110,6 +148,9 @@ struct CardView: View {
     var fondoColor: LinearGradient {
         return LinearGradient(colors: [.black, primaryColor.first ?? .clear], startPoint: .top, endPoint: .bottom)
     }
+    private let soundPlayer = SoundActive()
+    let sound:SoundModel = .init(name: "menuSound")
+   
     
     var body: some View {
         ZStack {
@@ -152,7 +193,11 @@ struct CardView: View {
                             .padding(.top, -170).multilineTextAlignment(.center)
                     }.frame(width: 550)
                     
-                    Button(action: buttonAction) {
+                    Button(action:{
+                       soundPlayer.play(withURL: sound.getURL())
+                        buttonAction()
+                        
+                    }) {
                         Text("VIAJAR")
                             .font(.custom("Montserrat", size: 20))
                             .foregroundColor(.black)

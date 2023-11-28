@@ -8,9 +8,9 @@ struct AE1DialogExpandable: View {
     
     let dialogs: [Text] = [
         Text("¡Hola, compañero!").foregroundColor(.planet3C2),
-        Text("Como buen astronauta, has de conocer los") + Text(" numeros primos... ").bold().foregroundColor(.planet3C2),
-        Text("Veamos qué tan bueno eres identificandolos..."),
-        Text("Hay algunos ") + Text("perdidos entre las estrellas").foregroundColor(.planet3C2) + Text(" y tenemos que encontrarlos."),
+        Text("Como buen astronauta, has de conocer los") .foregroundColor(.black) + Text(" numeros primos... ").bold().foregroundColor(.planet3C2),
+        Text("Veamos qué tan bueno eres identificandolos...").foregroundColor(.black),
+        Text("Hay algunos ").foregroundColor(.black) + Text("perdidos entre las estrellas").foregroundColor(.planet3C2) + Text(" y tenemos que encontrarlos.").foregroundColor(.black),
         Text(". . .").bold().foregroundColor(.planet3C2),
     ]
 

@@ -35,6 +35,10 @@ struct GeometryEx1View: View {
     @State var opaCongrats = 1.0
     @State var showCongrats = false
     
+    //Sonidos
+    private let soundPlayer = SoundActive()
+    let soundWin:SoundModel = .init(name: "soundWin")
+    
     var body: some View {
         ZStack{
                 VStack{
@@ -438,7 +442,9 @@ struct GeometryEx1View: View {
 
                     HStack{
                         if completed {
-                            SuccessDialog(nav: $nav)
+                            SuccessDialog(nav: $nav).onAppear{
+                                soundPlayer.play(withURL: soundWin.getURL())
+                            }
                         }
                     }
                 }

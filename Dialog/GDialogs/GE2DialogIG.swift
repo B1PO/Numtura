@@ -6,8 +6,8 @@ struct GE2DialogIG: View {
     @State private var isValidated = false
 
     let dialogs: [Text] = [
-                Text("Conecta los puntos para medir las constelaciónes usando el ") + Text("teorema de Pitagoras.").bold().foregroundColor(.figuresColor),
-                Text("El teorema dice que") + Text(" el cuadrado ").bold().foregroundColor(.figuresColor) + Text("del largo de la hipotenusa es igual a la suma de los cuadrados de las longitudes de los catetos.")
+                Text("Conecta los puntos para medir las constelaciónes usando el ").foregroundColor(.black) + Text("teorema de Pitagoras.").bold().foregroundColor(.figuresColor),
+                Text("El teorema dice que").foregroundColor(.black) + Text(" el cuadrado ").bold().foregroundColor(.figuresColor) + Text("del largo de la hipotenusa es igual a la suma de los cuadrados de las longitudes de los catetos.").foregroundColor(.black)
     ]
 
     var body: some View {

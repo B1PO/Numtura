@@ -1,5 +1,5 @@
 import SwiftUI
-
+import AVKit
 class objetos1{
     var nameFile:String
     var w:CGFloat
@@ -33,13 +33,18 @@ struct FullPlanetView: View {
     @State private var rotation: Double = 0
     @State private var currentIndex: Int = 0
     @State var nav: Bool = false
+    @State var nav2: Bool = false
+    @State var indexPrime: Int=0
+    let planetsView:[AnyView]=[AnyView(PhysicsEx2View()),AnyView(PhysicsEx2View()),AnyView(PhysicsEx2View()) ]
     
     //objetos de las misiones
     var carreraEsp=objetos1(nameFile: "space-shuttlep", w: 130, h: 130,p:117)
     var fuerzaMist=objetos1(nameFile: "sputnik_3594176", w: 130, h: 130,p:117)
     var base = objetos1(nameFile: "base", w: 230, h: 230,p:130)
     let colorBorder:LinearGradient = LinearGradient(colors: [.planet1C2,.planet1C1, .planet1C2,], startPoint: .top, endPoint: .bottom)
-    
+    //Sonidos
+    private let soundPlayer = SoundActive()
+    let sound:SoundModel = .init(name: "desplazarSound")
     //misiones
     var m1: misionObject1!
     var m2: misionObject1!
@@ -60,7 +65,10 @@ struct FullPlanetView: View {
             
             ZStack {
                 VStack{
-                    cardInfo1(buttonAction: goBakc,mision: misionesList [currentIndex]).padding(.bottom, 800)
+                    cardInfo1(
+                        buttonAction: goBakc,
+                        buttonMision: {performAction(index: currentIndex)},
+                        mision: misionesList [currentIndex]).padding(.bottom, 800)
                 }
                 placeView1(objeto:misionesList[currentIndex].objeto)
                 VStack{
@@ -91,6 +99,9 @@ struct FullPlanetView: View {
                                         updateCurrentMission()
                                     }
                                 }
+                                .onChanged{ _ in
+                                    self.soundPlayer.play(withURL: sound.getURL())
+                                }
                         )
                 }.padding(.top,500)
             }.offset(x: nav ? UIScreen.main.bounds.width*0 : UIScreen.main.bounds.width*0  , y: nav ? UIScreen.main.bounds.height * -1 : UIScreen.main.bounds.height * 0)
@@ -98,6 +109,9 @@ struct FullPlanetView: View {
             //Fin de ZStack
             if nav {
                 PlanetView()
+            }
+            if nav2 {
+                planetsView[indexPrime]
             }
         }
     }
@@ -114,16 +128,29 @@ struct FullPlanetView: View {
     func goBakc(){
         self.nav.toggle()
     }
+    func performAction(index: Int) {
+        
+        print("Acción para la tarjeta \(index)")
+        print("Redirigiendo a otra vista para la tarjeta \(index)")
+        self.nav2.toggle()
+        self.indexPrime=index
+    }//Fin de funcion
 }
 
 struct cardInfo1:View{
    // var coordenadas:String
     //var titulo:String
     var buttonAction: () -> Void
+    var buttonMision: () -> Void
     var mision: misionObject1
     let gradient: LinearGradient = LinearGradient(colors: [.black, .planet1C2,], startPoint: .top, endPoint: .bottom)
     let colorBorder:LinearGradient = LinearGradient(colors: [.planet1C1, .planet1C2], startPoint: .topLeading, endPoint: .bottomTrailing)
     let border:CGFloat=60.0
+    //Variables de sonido
+    private let soundPlayer = SoundActive()
+    let soundBack:SoundModel = .init(name: "backSound")
+    let soundStart:SoundModel = .init(name: "iniciarSound")
+    
     func holaMundo(){
         print("Hola mundo")
     }
@@ -162,6 +189,7 @@ struct cardInfo1:View{
                 
                 HStack {
                     Button {
+                        self.soundPlayer.play(withURL: soundBack.getURL())
                         buttonAction()
                     } label: {
                         Text("MENÚ")
@@ -173,7 +201,10 @@ struct cardInfo1:View{
                             .background(Color.white)
                             .cornerRadius(40)
                     } //Fin de boton
-                    Button(action: holaMundo, label: {
+                    Button(action: {
+                        buttonMision()
+                        self.soundPlayer.play(withURL: soundStart.getURL())
+                    }, label: {
                         Text("INICIAR")
                             .font(.custom("Montserrat", size: 20))
                             .foregroundColor(.black)

@@ -1,5 +1,5 @@
 import SwiftUI
-
+import AVKit
 class SharedData: ObservableObject {
     @Published var resultValue: Bool = false
 }
@@ -8,6 +8,10 @@ struct ArithmeticEx1View: View {
     @State private var stars: [Starrr] = []
     @State private var completed = false
     @State var nav: Bool = false
+    //Sonidos
+    private let soundPlayer = SoundActive()
+    let soundWin:SoundModel = .init(name: "soundWin")
+    
     
 
     let primeNumbers = [
@@ -21,10 +25,12 @@ struct ArithmeticEx1View: View {
     var body: some View {
         ZStack {
             VStack {
-                
                 if completed {
                     SuccessDialog(nav: $nav)
-                    .zIndex(1)
+                        .zIndex(1)
+                        .onAppear{
+                            soundPlayer.play(withURL: soundWin.getURL())
+                        }
                 } else {
                     AE1DialogIG()
                         .padding(.bottom, -80)

@@ -7,8 +7,8 @@ struct PE1DialogExpandable: View {
     @Binding var dialogOpacity: Double
     
     let dialogs: [Text] = [
-        Text("¡Te has encontrado con la nave misteriosa! ").foregroundColor(.planet1C2) + Text("Está atascada y el único que puede ayudarla para que continúe su camino, eres tú."),
-        Text("Es necesario aplicar una") + Text(" fuerza ").bold().foregroundColor(.planet1C2) + Text("sobre ella..."),
+        Text("¡Te has encontrado con la nave misteriosa! ").foregroundColor(.planet1C2) + Text("Está atascada y el único que puede ayudarla para que continúe su camino, eres tú.").foregroundColor(.black),
+        Text("Es necesario aplicar una").foregroundColor(.black) + Text(" fuerza ").bold().foregroundColor(.planet1C2) + Text("sobre ella...").foregroundColor(.black),
         Text(". . . ").bold().foregroundColor(.planet1C2)
     ]
 

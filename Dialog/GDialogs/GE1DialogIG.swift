@@ -6,8 +6,8 @@ struct GE1DialogIG: View {
     @State private var isValidated = false
 
     let dialogs: [Text] = [
-                Text("Elimina los pares semejantes que encuentres pulsando sobre las figuras."),
-                Text("Recuerda que dos figuras geométricas son ") + Text("semejantes").bold().foregroundColor(.figuresColor) + Text(" si tienen la misma forma (no importa su tamaño).")
+                Text("Elimina los pares semejantes que encuentres pulsando sobre las figuras.").foregroundColor(.black),
+                Text("Recuerda que dos figuras geométricas son ").foregroundColor(.black) + Text("semejantes").bold().foregroundColor(.figuresColor) + Text(" si tienen la misma forma (no importa su tamaño).").foregroundColor(.black)
     ]
 
     var body: some View {

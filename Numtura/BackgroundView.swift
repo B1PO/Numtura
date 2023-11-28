@@ -1,4 +1,39 @@
 import SwiftUI
+import AVKit
+//Estructura del sonido
+struct SoundModel: Hashable {
+    let name: String
+    func getURL() -> URL {
+        return URL(string: Bundle.main.path(forResource: name, ofType: "mp3")!)!
+    }
+}
+
+//Clase de sonido
+class SoundPlayer: ObservableObject {
+    var player: AVAudioPlayer?
+    
+    func play(withURL url: URL) {
+        do {
+            // Inicializa el reproductor de audio
+            player = try AVAudioPlayer(contentsOf: url)
+            
+            // Configura el reproductor de audio para reproducir en bucle
+            player?.numberOfLoops = -1  // -1 indica reproducción en bucle
+            player?.volume=0.2
+            // Prepara el reproductor para reproducir el sonido
+            player?.prepareToPlay()
+            
+            // Comienza a reproducir el sonido
+            player?.play()
+        } catch {
+            print("Error al inicializar el reproductor de audio: \(error.localizedDescription)")
+        }
+    }
+    func stop(){
+        player?.stop()
+    }
+}
+
 
 struct BackgroundView: View {
     @State private var scale: CGFloat = 1.0
@@ -7,8 +42,11 @@ struct BackgroundView: View {
     @State private var largeStars: [Star] = []
     @State var offsets: [UUID: CGSize] = [:]
     @State var timer: Timer?
+    @StateObject var soundPlayer = SoundPlayer()
+    let sound: SoundModel = .init(name: "bS")
     
     var body: some View {
+        
         ZStack{
             Color.backgroundColor
                 .ignoresSafeArea(.all)
@@ -25,12 +63,12 @@ struct BackgroundView: View {
             drawStars(stars: mediumStars, offsets: offsets)
             drawStars(stars: largeStars, offsets: offsets)
             
-        }.onAppear() {
+        }.edgesIgnoringSafeArea(.all).onAppear() {
             withAnimation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
                 scale = 1.1
             }
             generateStars()
-            
+            soundPlayer.play(withURL: sound.getURL())
             // Actualizar los offsets cada 2 segundos
             Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
                 for star in smallStars + mediumStars + largeStars {
@@ -42,6 +80,7 @@ struct BackgroundView: View {
             }
         }
         .onDisappear() {
+            self.soundPlayer.stop()
             self.timer?.invalidate()
             self.timer = nil
         }

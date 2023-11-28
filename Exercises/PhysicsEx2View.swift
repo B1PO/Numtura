@@ -7,6 +7,7 @@ struct PhysicsEx2View: View {
     @State private var completed = false
     @State private var isUFOAnimating = false
     @State private var asteroidOffset: CGFloat = 0
+    @State var nav: Bool = false
 
 
     let gradientColors: [Color] = [.planet1C1]
@@ -28,9 +29,7 @@ struct PhysicsEx2View: View {
                         if !completed {
                                             PE1DialogIG()
                         } else {
-                            //SuccessDialog(onContinue: {
-                                
-                            //})
+                            SuccessDialog(nav: $nav)
                         }
                          
                             ZStack {
