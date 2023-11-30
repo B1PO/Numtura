@@ -7,7 +7,7 @@ struct PE1DialogIGExpandable: View {
 
     let dialogs: [Text] = [
                 Text("Presiona la nave hasta obtener la fuerza necesaria para salir.").foregroundColor(.planet1C2),
-                Text("Recuerda que ").foregroundColor(.planet1C2) + Text(" para calcular la fuerza") + Text("\n\n") + Text("Formula.").foregroundColor(.planet1C2)
+                Text("Recuerda que ").foregroundColor(.planet1C2) + Text(" para calcular la fuerza se utiliza la formula:") + Text("\n\n") + Text("fuerza  = (masa)(aceleración)").foregroundColor(.planet1C2).bold()
     ]
 
     var body: some View {
